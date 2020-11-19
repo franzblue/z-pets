@@ -45,6 +45,7 @@ class NestItem extends Component {
 
         <img src={this.props.store.pet.img}/>
         <button onClick={this.feed}>Feed</button>
+        <p>{this.props.store.pet.name} is this hungry! {this.props.store.pet.health}/100</p>
       </div>
     );
   }
