@@ -25,7 +25,7 @@ class PetTwo extends Component {
     }
     else {
             console.log('selected', this.state.temperament);
-      this.props.dispatch( {type: 'SELECT_PET', payload: this.state});
+      this.props.dispatch( {type: 'SELECT_PET', payload: this.state} );
       alert('Congrats on the new pet!');
       this.props.history.push('/nest');
     }

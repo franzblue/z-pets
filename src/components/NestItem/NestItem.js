@@ -10,7 +10,12 @@ class NestItem extends Component {
     
       getPet = () => {
         console.log('get pet');
-        this.props.dispatch( {type:'GET_PET'});
+        this.props.dispatch( {type:'GET_PET'} );
+      }
+
+      feed = () => {
+        console.log('clicked feed');
+        this.props.dispatch( {type: 'FEED'} );
       }
 
       onOrOffDuty = () => {
@@ -39,6 +44,7 @@ class NestItem extends Component {
           { this.onOrOffDuty() }
 
         <img src={this.props.store.pet.img}/>
+        <button onClick={this.feed}>Feed</button>
       </div>
     );
   }

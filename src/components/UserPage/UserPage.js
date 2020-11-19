@@ -10,14 +10,15 @@ class UserPage extends Component {
     this.props.history.push('/1');
   }
 
-  componentDidMount = () => {
-    this.getPet();
-  }
+  // not sure why I need to get pet here
+  // componentDidMount = () => {
+  //   this.getPet();
+  // }
 
-  getPet = () => {
-    console.log('get pet');
-    this.props.dispatch( {type:'GET_PET'});
-  }
+  // getPet = () => {
+  //   console.log('get pet');
+  //   this.props.dispatch( {type:'GET_PET'} );
+  // }
   
   render() {
     return (
