@@ -19,6 +19,11 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import PetSelectOne from '../PetSelectOne/PetSelectOne';
+import PetSelectTwo from '../PetSelectTwo/PetSelectTwo';
+import PetSelectThree from '../PetSelectThree/PetSelectThree';
+import PetSelectFour from '../PetSelectFour/PetSelectFour';
+import Nest from '../Nest/Nest';
 
 import './App.css';
 
@@ -91,6 +96,36 @@ class App extends Component {
               path="/home"
               component={LandingPage}
               authRedirect="/user"
+            />
+
+            <ProtectedRoute 
+              exact 
+              path="/1" 
+              component={PetSelectOne}
+            />
+
+            <ProtectedRoute 
+              exact 
+              path="/2" 
+              component={PetSelectTwo}
+            />
+
+            <ProtectedRoute 
+              exact 
+              path="/3" 
+              component={PetSelectThree}
+            />
+
+            <ProtectedRoute 
+              exact 
+              path="/4" 
+              component={PetSelectFour}
+            />
+
+            <ProtectedRoute
+              exact 
+              path="/nest" 
+              component={Nest} 
             />
 
             {/* If none of the other routes matched, we will show a 404. */}
