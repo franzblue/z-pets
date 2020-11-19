@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
   console.log('POST pets route with:', req.user);
   const name = req.body.name;
   const temperament = req.body.temperament;
-  const queryText = `INSERT INTO "z-pets" ("name", "birthday", "temperament", "user_id") VALUES ($1, NOW(), $2, $3);`;
+  const queryText = `INSERT INTO "z-pets" ("name", "birthday", "weight", "temperament", "user_id") VALUES ($1, NOW(), CAST(RANDOM() * 100 AS INT), $2, $3);`;
   pool.query(queryText, [name, temperament, req.user.id])
     .then(() => { res.sendStatus(201)})
     .catch((error) => {
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
 
 router.put("/:id", (req, res) => {
     console.log('hello from router', req.params.id);
-    const queryText = `UPDATE "z-pets" SET "health" = "health" + 10 WHERE "id" = $1;`;
+    const queryText = `UPDATE "z-pets" SET "health" = "health" + 10, "weight" = "weight" + 1 WHERE "id" = $1;`;
     pool
       .query(queryText, [req.params.id])
       .then(() => {
