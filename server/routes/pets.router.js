@@ -7,11 +7,10 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   // GET route code here
-  const queryText = `SELECT * FROM "z-pets" 
-                     JOIN "user" ON "z-pets"."user_id" = $1 
-                     WHERE "z-pets"."health" > 0 
-                     ORDER BY "user"."id" ASC LIMIT 1;`
-  pool.query(queryText, [req.user.id])
+  const user = req.user.id
+  const queryText = `SELECT * FROM "z-pets"  
+                     WHERE "z-pets"."user_id" = $1 LIMIT 1;`
+  pool.query(queryText, [user])
     .then((results) => res.send(results.rows))
     .catch((error) => {
       console.log(error);
@@ -35,5 +34,20 @@ router.post('/', (req, res) => {
         res.sendStatus(500);
     });
 });
+
+router.put("/:id", (req, res) => {
+    console.log('hello from router', req.params.id);
+    const queryText = `UPDATE "z-pets" SET "health" = "health" + 10 WHERE "id" = $1;`;
+    pool
+      .query(queryText, [req.params.id])
+      .then(() => {
+        res.sendStatus(201);
+      })
+      .catch((error) => {
+        res.sendStatus(500);
+        alert("error", error);
+      });
+});
+  
 
 module.exports = router;

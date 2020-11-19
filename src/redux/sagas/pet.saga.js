@@ -20,9 +20,20 @@ function* getPet() {
   }
 }
 
+function* feedPet(action) {
+    try {
+        yield axios.put(`/api/pets/${action.payload}`, action.payload);
+        yield put( {type: 'GET_PET'} );
+    }
+    catch (error) {
+        console.log('feeding pet failed', error);
+    }
+}
+
 function* petSaga() {
-    yield takeLatest('GET_PET', getPet)
+    yield takeLatest('GET_PET', getPet);
     yield takeLatest('SELECT_PET', selectPet);
+    yield takeLatest('FEED', feedPet);
   }
   
   export default petSaga;

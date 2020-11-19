@@ -15,7 +15,7 @@ class NestItem extends Component {
 
       feed = () => {
         console.log('clicked feed');
-        this.props.dispatch( {type: 'FEED'} );
+        this.props.dispatch( {type: 'FEED', payload: this.props.store.pet.id} );
       }
 
       onOrOffDuty = () => {
