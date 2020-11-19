@@ -22,7 +22,7 @@ class NestItem extends Component {
         if(this.props.store.pet.temperament === "Happy") {
             // need to return JSX
             return <p className="happy"></p>;
-        } else if(this.props.store.pet.temperament == "Sad") {
+        } else if(this.props.store.pet.temperament === "Sad") {
             // need to return JSX
             return <p className="sad"></p>;
         } else if(this.props.store.pet.temperament === "Angry") {
@@ -43,7 +43,7 @@ class NestItem extends Component {
           {JSON.stringify(this.props.store.pet)}
           { this.onOrOffDuty() }
 
-        <img src={this.props.store.pet.img}/>
+        <img src={this.props.store.pet.img} alt={this.props.store.pet.name}/>
         <button onClick={this.feed}>Feed</button>
         <p>{this.props.store.pet.name} is this hungry! {this.props.store.pet.health}/100</p>
       </div>
