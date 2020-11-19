@@ -29,8 +29,9 @@ class Admin extends Component {
 
   render() {
     return (
-      <div>
-        <table>
+        <div>
+            <h2>Z-Pets Table</h2>
+            <table>
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -51,8 +52,28 @@ class Admin extends Component {
                 })}
                 </tbody>
                 <tfoot>
-                    <tr id="foot">
+                    <tr>
                         <td colSpan="8"></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h2>Users Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colSpan="4"></td>
                     </tr>
                 </tfoot>
             </table>

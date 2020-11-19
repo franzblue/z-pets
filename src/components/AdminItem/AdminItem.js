@@ -20,21 +20,11 @@ class AdminItem extends Component {
         })
         .then((willDelete) => {
             if (willDelete) {
-                console.log('clicked delete', this.props.item.id);
-               
-                // this.props.disptach( {type:'DELETE_PET'});
-
-                // need to dispatch this delete request
- 
-                // axios.delete(`/feedback/${this.props.item.id}`).then((response) => {
-                //     console.log('DELETE back from server', response);
-                //     this.props.getDB();
-                //     }).catch((error) => {
-                //         console.log('DELETE error', error);
-                //     })
+                console.log('clicked delete', this.props.item.id);     
+                this.props.dispatch( {type:'DELETE_PET', payload: this.props.item.id} );
                     swal("This feedback has been deleted!", {
                         icon: "success",
-                      });
+                    });
             }
             else {
                 swal("This feedback was not deleted.");
@@ -59,23 +49,3 @@ class AdminItem extends Component {
 }
 
 export default connect(mapStoreToProps)(AdminItem);
-
-
-
-
-{/* <td>{this.props.store.pet.id}</td>
-<td>{this.props.store.pet.name}</td>
-<td>{this.props.store.pet.birthday}</td>
-<td>{this.props.store.pet.temperament}</td>
-<td>{this.props.store.pet.health}</td>
-<td>{this.props.store.pet.energy}</td>
-<td>{this.props.store.pet.user_id}</td> */}
-
-
-// <td>{this.props.store.admin.id}</td>
-// <td>{this.props.store.admin.name}</td>
-// <td>{this.props.store.admin.birthday}</td>
-// <td>{this.props.store.admin.temperament}</td>
-// <td>{this.props.store.admin.health}</td>
-// <td>{this.props.store.admin.energy}</td>
-// <td>{this.props.store.admin.user_id}</td>
