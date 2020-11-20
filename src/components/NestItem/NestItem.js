@@ -21,16 +21,16 @@ class NestItem extends Component {
       onOrOffDuty = () => {
         if(this.props.store.pet.temperament === "Happy") {
             // need to return JSX
-            return <p className="happy"></p>;
+            return <div className="happy"></div>;
         } else if(this.props.store.pet.temperament === "Sad") {
             // need to return JSX
-            return <p className="sad"></p>;
+            return <div className="sad"></div>;
         } else if(this.props.store.pet.temperament === "Angry") {
             // need to return JSX
-            return <p className="angry"></p>;
+            return <div className="angry"></div>;
         } else if(this.props.store.pet.temperament === "Aloof") {
             // need to return JSX
-            return <p className="aloof"></p>;
+            return <div className="aloof"></div>;
         } else {
             // need to return JSX
             return  <p>SLEEPING</p>;
