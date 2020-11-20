@@ -7,6 +7,7 @@ class UserPage extends Component {
 
   nextPage = () => {
     console.log('clicked');
+    this.props.dispatch({ type: 'LAST_LOGGED', payload: this.props.store.user.id})
     this.props.history.push('/1');
   }
 

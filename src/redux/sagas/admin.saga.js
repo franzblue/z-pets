@@ -41,11 +41,22 @@ function* adminDeleteUser(action) {
     }
 }
 
+function* updateLastLogged(action) {
+    console.log('update last logged', action.payload);
+    try{
+        yield axios.put(`/api/admin/user/${action.payload}`);
+    } catch (error) {
+        console.log('error', error);
+    }
+}
+
+
 function* adminSaga() {
     yield takeLatest('GET_ADMIN_PET', adminGetPet);
     yield takeLatest('DELETE_PET', adminDelete);
     yield takeLatest('GET_ADMIN_USER', adminGetUser);
     yield takeLatest('DELETE_USER', adminDeleteUser);
+    yield takeLatest('LAST_LOGGED', updateLastLogged);
   }
   
   export default adminSaga;

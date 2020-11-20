@@ -51,4 +51,17 @@ router.delete('/user/:id', (req, res) => {
     });
 });
 
+router.put('/user/:id', (req, res) => {
+    console.log(req.params.id);
+    let userId = req.params.id;
+    let queryText = `UPDATE "user" SET "last_logged" = NOW() WHERE id = $1;`;
+    pool.query(queryText, [userId]).then((result) => {
+        console.log(result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error updating last logged', error);
+        res.sendStatus(500);
+    });
+});
+
   module.exports = router;
