@@ -41,7 +41,7 @@ class AdminItem extends Component {
       <tr>
             <td>{this.props.item.id}</td>
             <td>{this.props.item.name}</td>
-            <td>{this.props.item.birthday}</td>
+            <td>{this.props.item.birthday.substring(0, 10)}</td>
             <td>{this.props.item.temperament}</td>
             <td>{this.props.item.health}</td>
             <td>{this.props.item.energy}</td>
