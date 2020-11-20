@@ -42,13 +42,13 @@ class PetFour extends Component {
   render() {
     return (
       <div>
-        <h2>{this.state.temperament}</h2>
-        <p>How cute!</p>
-        <p>This lil guy has no idea what's going on, huh?</p>
         <div className="petAnimation">
           <p className='aloof'></p>
           <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
         </div>
+        <h2>{this.state.temperament}</h2>
+        <p>How cute!</p>
+        <p>This lil guy has no idea what's going on, huh?</p>
         <button onClick={this.prevPage}>View previous pet</button>
         <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
         <button onClick={this.nextPage}>Back to HomePage</button>

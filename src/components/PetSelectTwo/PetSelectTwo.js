@@ -43,13 +43,13 @@ class PetTwo extends Component {
   render() {
     return (
       <div>
-        <h2>{this.state.temperament}</h2>
-        <p>Although this Z-Pet may look down, that is only because it's heart is so big.</p>
-        <p>Is it possible to love something too much?</p>
         <div className="petAnimation">
           <p className='sad'></p>
           <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
         </div>
+        <h2>{this.state.temperament}</h2>
+        <p>Although this Z-Pet may look down, that is only because it's heart is so big.</p>
+        <p>Is it possible to love something too much?</p>
         <button onClick={this.prevPage}>View previous pet</button>
         <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
         <button onClick={this.nextPage}>View next pet</button>

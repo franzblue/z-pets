@@ -42,13 +42,13 @@ class PetThree extends Component {
   render() {
     return (
       <div>
-        <h2>{this.state.temperament}</h2>
-        <p>Do not be frightened of angry Z-Pets!</p>
-        <p>When they channel their emotions properly they can be very passionate.</p>
         <div className="petAnimation">
           <p className='angry'></p>
           <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
         </div>
+        <h2>{this.state.temperament}</h2>
+        <p>Do not be frightened of angry Z-Pets!</p>
+        <p>When they channel their emotions properly they can be very passionate.</p>
         <button onClick={this.prevPage}>View previous pet</button>
         <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
         <button onClick={this.nextPage}>View next pet</button>

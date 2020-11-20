@@ -198,7 +198,7 @@ Happy
   -webkit-animation: happy 1s infinite;
   -moz-animation: happy 1s infinite;
   -o-animation: happy 1s infinite;
-  top: 15em; right: 10em; left: 10em; bottom: 5em;
+  top: 15em; right: 25em; left: 25em; bottom: 5em;
 }
 
 @keyframes happy {
@@ -270,7 +270,7 @@ Angry
   -webkit-animation: angry 1s infinite;
   -moz-animation: angry 1s infinite;
   -o-animation: angry 1s infinite;
-  top: 15em; right: 10em; left: 10em; bottom: 5em;
+  top: 15em; right: 25em; left: 25em; bottom: 5em;
 }
 
 @keyframes angry {
@@ -311,7 +311,7 @@ Aloof
   -webkit-animation: aloof 1s infinite;
   -moz-animation: aloof 1s infinite;
   -o-animation: aloof 1s infinite;
-  top: 15em; right: 10em; left: 10em; bottom: 5em;
+  top: 15em; right: 12em; left: 12em; bottom: 5em;
 }
 
 @keyframes aloof {
