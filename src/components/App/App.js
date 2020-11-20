@@ -25,6 +25,7 @@ import PetSelectThree from '../PetSelectThree/PetSelectThree';
 import PetSelectFour from '../PetSelectFour/PetSelectFour';
 import Admin from '../Admin/Admin';
 import Nest from '../Nest/Nest';
+import Joke from '../Joke/Joke';
 
 import './App.css';
 
@@ -133,6 +134,12 @@ class App extends Component {
               exact 
               path="/admin" 
               component={Admin} 
+            />
+
+            <ProtectedRoute
+              exact 
+              path="/joke" 
+              component={Joke} 
             />
 
             {/* If none of the other routes matched, we will show a 404. */}

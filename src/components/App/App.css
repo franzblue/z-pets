@@ -4,7 +4,7 @@ body,
   height: 100%;
 }
 
-.petAnimation  {
+.petAnimation, .description {
   position: relative;
   border: 2px teal double;
   background-color: teal;
@@ -54,10 +54,10 @@ Button
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: darkorchid;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: teal;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;

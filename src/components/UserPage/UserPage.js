@@ -2,24 +2,42 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import swal from 'sweetalert';
 
 class UserPage extends Component {
-
-  nextPage = () => {
-    console.log('clicked');
-    this.props.dispatch({ type: 'LAST_LOGGED', payload: this.props.store.user.id})
-    this.props.history.push('/1');
+ 
+  componentDidMount = () => {
+    this.getPet();
   }
 
-  // not sure why I need to get pet here
-  // componentDidMount = () => {
-  //   this.getPet();
-  // }
+  getPet = () => {
+    console.log('get pet', this.props.store.pet);
+    this.props.dispatch( {type:'GET_PET'} );
+  }
 
-  // getPet = () => {
-  //   console.log('get pet');
-  //   this.props.dispatch( {type:'GET_PET'} );
-  // }
+  nextPage = () => {
+    if(this.props.store.pet.name === '' || this.props.store.pet.name === null || this.props.store.pet.name === undefined) {
+      console.log('clicked');
+      this.props.dispatch({ type: 'LAST_LOGGED', payload: this.props.store.user.id})
+      this.props.history.push('/1');
+    } 
+    else if (this.props.store.pet.name !== '' || this.props.store.pet.name !== null || this.props.store.pet.name !== undefined) {
+        swal("Don't you already have a Pet?", "Go play with your Pet!", "info");
+    }
+  }
+
+  otherPage = () => {
+    console.log('clicked');
+    if(this.props.store.pet.name === '' || this.props.store.pet.name === null || this.props.store.pet.name === undefined) {
+      swal("You don't have a Z-Pet...", "Go pick one out!", "info");
+    }
+    else {
+          this.props.dispatch({ type: 'LAST_LOGGED', payload: this.props.store.user.id})
+    this.props.history.push('/nest');
+    }
+  }
+
+
   
   render() {
     return (
@@ -60,8 +78,9 @@ class UserPage extends Component {
               pretium in sit amet nisi.
             </p>
           </div>
-        <button onClick={this.nextPage}>Ready to Choose Pet!</button>
-        <LogOutButton className="log-in" />
+        <button className="btn" onClick={this.nextPage}>Ready to choose Pet!</button>
+        <LogOutButton className="btn" />
+        <button className="btn" onClick={this.otherPage}>Go hang out with your Pet!</button>
       </div>
     );
   }

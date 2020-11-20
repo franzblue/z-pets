@@ -6,10 +6,22 @@ import swal from 'sweetalert';
 
 class NestItem extends Component {
 
+  state = {
+    hungery: 100
+  }
+
     componentDidMount = () => {
         this.getPet();
+        this.hungeryFunction();
       }
-    
+
+      hungeryFunction = () => {
+        setTimeout(() => {
+          this.setState( {
+            hungery: this.state.hungery - 10
+          })}, 1000);
+      }
+
       getPet = () => {
         console.log('get pet');
         this.props.dispatch( {type:'GET_PET'} );
@@ -49,16 +61,17 @@ class NestItem extends Component {
     return (
       <div>
           {JSON.stringify(this.props.store.pet)}
+          <br/>
+          <p>Hunger Level Test: {JSON.stringify(this.state.hungery)}</p>
           <div className="petAnimation">
             { this.petAnimation() }
             <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
           </div>
           
-         
         <div className="petInfo">
           <p>Owner: {this.props.store.user.username}</p>
           <p>Name: {this.props.store.pet.name}</p>
-          <button onClick={this.feedPet}>Feed</button>
+          <button className="btn" onClick={this.feedPet}>Feed</button>
           {this.props.store.pet.health === 100 ?
           <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
           :

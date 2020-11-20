@@ -3,7 +3,7 @@ const adminReducer = (state = [], action) => {
       case 'SET_ADMIN_USER':
         return action.payload;
       case 'UNSET_ADMIN_USER':
-        return {};
+        return [];
       default:
         return state;
     }
