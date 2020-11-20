@@ -7,7 +7,7 @@ const {
 
   router.get('/', rejectUnauthenticated, (req, res) => {
     // GET route code here
-    const queryText = `SELECT * FROM "z-pets";`
+    const queryText = `SELECT * FROM "z-pet";`
     pool.query(queryText)
       .then((results) => res.send(results.rows))
       .catch((error) => {
@@ -18,7 +18,7 @@ const {
 
 router.delete('/:id', (req, res) => {
     let petId = req.params.id;
-    let queryText = `DELETE FROM "z-pets" WHERE "id" = $1;`;
+    let queryText = `DELETE FROM "z-pet" WHERE "id" = $1;`;
     pool.query(queryText, [petId]).then((result) => {
         console.log(result);
         res.sendStatus(200);

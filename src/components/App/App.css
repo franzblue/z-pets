@@ -4,6 +4,10 @@ body,
   height: 100%;
 }
 
+div {
+  text-align: center;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
@@ -110,6 +114,57 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+/* --------------------------------------------------------------------------------
+Admin Table
+-------------------------------------------------------------------------------- */
+
+table {
+  table-layout: fixed;
+}
+
+table, th, td {
+  width: 80%;
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+  margin: auto
+}
+
+table th {
+background-color: #d2d2d2;
+font-weight: normal;
+}
+
+table tr:nth-child(even) {
+background-color: #efefef;
+}
+
+table tr:nth-child(odd) {
+background-color: #ffffff;
+}
+
+.foot {
+  background-color: #d2d2d2;
+}
+
+
+
+
+
+/* --------------------------------------------------------------------------------
+CAUTION ~*~*~*~*~*~ SCROLLING BELOW CAN CAUSE COMPUTERS TO LAG ~*~*~*~*~*~ CAUTION
+-------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
 
 /* --------------------------------------------------------------------------------
 Happy

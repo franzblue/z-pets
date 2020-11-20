@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import swal from 'sweetalert';
 
 class NestItem extends Component {
 
@@ -13,12 +14,18 @@ class NestItem extends Component {
         this.props.dispatch( {type:'GET_PET'} );
       }
 
-      feed = () => {
-        console.log('clicked feed');
-        this.props.dispatch( {type: 'FEED', payload: this.props.store.pet.id} );
+      feedPet = () => {
+        if(this.props.store.pet.health !== 100) {
+          console.log('clicked feed');
+          this.props.dispatch( {type: 'FEED', payload: this.props.store.pet.id} );
+        } else {
+            swal("100/100", "Looks like your Z-Pet is full!", "warning", {
+            button: "Aww yiss!",
+        });
+        }
       }
 
-      onOrOffDuty = () => {
+      petAnimation = () => {
         if(this.props.store.pet.temperament === "Happy") {
             // need to return JSX
             return <div className="happy"></div>;
@@ -41,11 +48,21 @@ class NestItem extends Component {
     return (
       <div>
           {JSON.stringify(this.props.store.pet)}
-          { this.onOrOffDuty() }
+          <div className="petAnimation">
+            { this.petAnimation() }
+            <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+          </div>
+          
+         
 
-        <img src={this.props.store.pet.img} alt={this.props.store.pet.name}/>
-        <button onClick={this.feed}>Feed</button>
-        <p>{this.props.store.pet.name} is this hungry! {this.props.store.pet.health}/100</p>
+        <p>Owner: {this.props.store.user.username}</p>
+        <p>Name: {this.props.store.pet.name}</p>
+        <button onClick={this.feedPet}>Feed</button>
+        {this.props.store.pet.health === 100 ?
+        <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
+        :
+        <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
+        }   
       </div>
     );
   }

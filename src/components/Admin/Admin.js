@@ -53,7 +53,7 @@ class Admin extends Component {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colSpan="8"></td>
+                        <td className="foot" colSpan="8"></td>
                     </tr>
                 </tfoot>
             </table>
@@ -69,11 +69,11 @@ class Admin extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                        
+
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colSpan="4"></td>
+                        <td className="foot" colSpan="4"></td>
                     </tr>
                 </tfoot>
             </table>
