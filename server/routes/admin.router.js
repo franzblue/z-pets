@@ -16,10 +16,33 @@ const {
       });
   });
 
+  router.get('/user', rejectUnauthenticated, (req, res) => {
+    // GET route code here
+    const queryText = `SELECT * FROM "user";`
+    pool.query(queryText)
+      .then((results) => res.send(results.rows))
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+      });
+  });
+
 router.delete('/:id', (req, res) => {
     let petId = req.params.id;
     let queryText = `DELETE FROM "z-pet" WHERE "id" = $1;`;
     pool.query(queryText, [petId]).then((result) => {
+        console.log(result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error in post', error);
+        res.sendStatus(500);
+    });
+});
+
+router.delete('/user/:id', (req, res) => {
+    let userId = req.params.id;
+    let queryText = `DELETE FROM "user" WHERE "id" = $1;`;
+    pool.query(queryText, [userId]).then((result) => {
         console.log(result);
         res.sendStatus(200);
     }).catch((error) => {

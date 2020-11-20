@@ -2,29 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import AdminItem from '../AdminItem/AdminItem';
+import AdminUser from '../AdminUser/AdminUser';
 
 
 class Admin extends Component {
 
-    state = {
-        object: ''
-    }
-
   componentDidMount = () => {
-    this.adminGet();
-    this.setup();
+    this.adminGetPet();
+    this.adminGetUser();
   }
 
-  setup = () => {
-    this.setState( {
-        object: this.props.store.admin
-        });
-    console.log(this.state.object);
+  adminGetPet = () => {
+    console.log('admin GET pet');
+    this.props.dispatch( {type:'GET_ADMIN_PET'} );
   }
-
-  adminGet = () => {
-    console.log('admin GET');
-    this.props.dispatch( {type:'GET_ADMIN'} );
+  
+  adminGetUser = () => {
+    console.log('admin GET pet');
+    this.props.dispatch( {type:'GET_ADMIN_USER'} );
   }
 
   render() {
@@ -65,11 +60,15 @@ class Admin extends Component {
                         <th>Id</th>
                         <th>Username</th>
                         <th>Password</th>
-                        <th>Admin</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                {this.props.store.adminUser.map( (item, index) => {
+                    return(
+                        <AdminUser item={item} key={index}/>
+                    )
+                })}
                 </tbody>
                 <tfoot>
                     <tr>
