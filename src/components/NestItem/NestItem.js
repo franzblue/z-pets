@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import swal from 'sweetalert';
+import './NestItem.css';
 
 class NestItem extends Component {
 
@@ -54,16 +55,17 @@ class NestItem extends Component {
           </div>
           
          
-
-        <p>Owner: {this.props.store.user.username}</p>
-        <p>Name: {this.props.store.pet.name}</p>
-        <button onClick={this.feedPet}>Feed</button>
-        {this.props.store.pet.health === 100 ?
-        <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
-        :
-        <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
-        }   
-      </div>
+        <div className="petInfo">
+          <p>Owner: {this.props.store.user.username}</p>
+          <p>Name: {this.props.store.pet.name}</p>
+          <button onClick={this.feedPet}>Feed</button>
+          {this.props.store.pet.health === 100 ?
+          <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
+          :
+          <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
+          }   
+        </div>
+      </div> 
     );
   }
 }

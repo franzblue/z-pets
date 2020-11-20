@@ -39,11 +39,11 @@ class Test extends Component {
   render() {
     return (
       <tr>
-            <td onClick={this.delete}><span role="img" aria-labelledby="trash bin">🗑️ </span></td>
             <td>{this.props.item.id}</td>
             <td>{this.props.item.username}</td>
-            <td>{this.props.item.admin.toString()}</td>
             <td>{this.props.item.password}</td>
+            <td>{this.props.item.admin.toString()}</td>
+            <td onClick={this.delete}><span role="img" aria-labelledby="trash bin">🗑️ </span></td>
       </tr>
     );
   }

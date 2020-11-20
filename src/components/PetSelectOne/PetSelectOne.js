@@ -4,7 +4,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../App/App.css';
 import swal from 'sweetalert';
 
-
 class PetOne extends Component {
   state = {
     temperament: 'Happy',
@@ -45,9 +44,12 @@ class PetOne extends Component {
     return (
       <div>
         <h2>{this.state.temperament}</h2>
-        <p className='happy'></p>
         <p>Happy Z-Pets love to play and frolic outdoors.</p>
         <p>They also tell the best jokes!</p>
+        <div className="petAnimation">
+          <p className='happy'></p>
+          <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+        </div>
         <button onClick={this.prevPage}>Back to HomePage</button>
         <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
         <button onClick={this.nextPage}>View next pet</button>

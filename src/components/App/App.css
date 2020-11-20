@@ -4,6 +4,15 @@ body,
   height: 100%;
 }
 
+.petAnimation  {
+  position: relative;
+  border: 2px teal double;
+  background-color: teal;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 div {
   text-align: center;
 }
@@ -129,7 +138,8 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 5px;
-  margin: auto
+  margin: auto;
+  overflow: auto;
 }
 
 table th {
@@ -171,14 +181,12 @@ Happy
 -------------------------------------------------------------------------------- */
 
 .happy {
-  /* position: absolute; */
+  position: absolute;
   animation: happy 1s infinite;
   -webkit-animation: happy 1s infinite;
   -moz-animation: happy 1s infinite;
   -o-animation: happy 1s infinite;
-  position: fixed;
-  top:-125%; right:-70%; left:-100%; bottom:-100%;
-  margin:auto;
+  top: 15em; right: 10em; left: 10em; bottom: 5em;
 }
 
 @keyframes happy {
@@ -209,15 +217,12 @@ Sad
 -------------------------------------------------------------------------------- */
 
 .sad {
-  /* position: absolute; */
+  position: absolute;
   animation: sad 1s infinite;
   -webkit-animation: sad 1s infinite;
   -moz-animation: sad 1s infinite;
   -o-animation: sad 1s infinite;
-  position: fixed;
-  top:-125%; right:-70%; left:-100%; bottom:-100%;
-  margin:auto;
-
+  top: 15em; right: 10em; left: 10em; bottom: 5em;
 }
 
 @keyframes sad {
@@ -248,14 +253,12 @@ Angry
 -------------------------------------------------------------------------------- */
 
 .angry {
-  /* position: absolute; */
+  position: absolute;
   animation: angry 1s infinite;
   -webkit-animation: angry 1s infinite;
   -moz-animation: angry 1s infinite;
   -o-animation: angry 1s infinite;
-  position: fixed;
-  top:-125%; right:-70%; left:-100%; bottom:-100%;
-  margin:auto;
+  top: 15em; right: 10em; left: 10em; bottom: 5em;
 }
 
 @keyframes angry {
@@ -291,14 +294,12 @@ Aloof
 -------------------------------------------------------------------------------- */
 
 .aloof {
-  /* position: absolute; */
+  position: absolute;
   animation: aloof 1s infinite;
   -webkit-animation: aloof 1s infinite;
   -moz-animation: aloof 1s infinite;
   -o-animation: aloof 1s infinite;
-  position: fixed;
-  top:-125%; right:-70%; left:-100%; bottom:-100%;
-  margin:auto;
+  top: 15em; right: 10em; left: 10em; bottom: 5em;
 }
 
 @keyframes aloof {
