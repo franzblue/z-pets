@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import swal from 'sweetalert';
 
-
-
 class AdminItem extends Component {
 
     // DELETE request to delete Z-Pet

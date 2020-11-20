@@ -43,6 +43,7 @@ class Test extends Component {
             <td>{this.props.item.username}</td>
             <td>{this.props.item.password}</td>
             <td>{this.props.item.admin.toString()}</td>
+            <td>{this.props.item.last_logged.substring(0, 16)}</td>
             <td onClick={this.delete}><span role="img" aria-labelledby="trash bin">🗑️ </span></td>
       </tr>
     );
