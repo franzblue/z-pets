@@ -11,7 +11,8 @@ class AdminItem extends Component {
     // sweetalert to verify with user
     // targets Pet id value
     delete = () => {
-        swal({
+        if(this.props.store.user.admin === true) {
+                swal({
             title: "Are you sure?",
             text: `Once deleted, ${this.props.item.name} will be lost forever.`,
             icon: "warning",
@@ -30,6 +31,9 @@ class AdminItem extends Component {
                 swal(`${this.props.item.name} was not deleted.`);
               }
         });
+        } else {
+            swal("WARNING!", "You are not authorized to delete data.", "warning");
+        }
     } 
 
   render() {

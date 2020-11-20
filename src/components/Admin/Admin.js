@@ -25,6 +25,8 @@ class Admin extends Component {
   render() {
     return (
         <div>
+                                    <p>current z-pet: {JSON.stringify(this.props.store.pet)}</p>
+                                    <p>all z-pets: {JSON.stringify(this.props.store.admin)}</p>
             <h2>Z-Pets Table</h2>
             <table>
                 <thead>
@@ -52,7 +54,8 @@ class Admin extends Component {
                     </tr>
                 </tfoot>
             </table>
-
+                                    <p>current user: {JSON.stringify(this.props.store.user)}</p>
+                                    <p>all users: {JSON.stringify(this.props.store.adminUser)}</p>
             <h2>Users Table</h2>
             <table>
                 <thead>

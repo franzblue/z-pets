@@ -11,25 +11,29 @@ class Test extends Component {
     // sweetalert to verify with user
     // targets Pet id value
     delete = () => {
-        swal({
-            title: "Are you sure?",
-            text: `Once deleted, ${this.props.item.username} will be lost forever.`,
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
-        .then((willDelete) => {
-            if (willDelete) {
-                console.log('clicked delete', this.props.item.id);     
-                this.props.dispatch( {type:'DELETE_USER', payload: this.props.item.id} );
-                    swal(`${this.props.item.username} has been deleted!`, {
-                        icon: "success",
-                    });
-            }
-            else {
-                swal(`${this.props.item.username} was not deleted.`);
+      if(this.props.store.user.admin === true) {
+                  swal({
+              title: "Are you sure?",
+              text: `Once deleted, ${this.props.item.username} will be lost forever.`,
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+              if (willDelete) {
+                  console.log('clicked delete', this.props.item.id);     
+                  this.props.dispatch( {type:'DELETE_USER', payload: this.props.item.id} );
+                      swal(`${this.props.item.username} has been deleted!`, {
+                          icon: "success",
+                      });
               }
-        });
+              else {
+                  swal(`${this.props.item.username} was not deleted.`);
+                }
+          });
+      } else {
+        swal("WARNING!", "You are not authorized to delete data.", "warning");
+      }
     } 
 
   render() {
