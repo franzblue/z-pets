@@ -60,15 +60,19 @@ class NestItem extends Component {
             <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
           </div>
           
-        <div className="petInfo">
-          <p>Owner: {this.props.store.user.username}</p>
-          <p>Name: {this.props.store.pet.name}</p>
+        <div>
+          <p>Z-Pet Name: {this.props.store.pet.name} Owner: {this.props.store.user.username}</p>
           <button className="btn" onClick={this.feedPet}>Feed</button>
           {this.props.store.pet.health === 100 ?
           <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
           :
           <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
-          }   
+          }
+          {this.props.store.pet.energy === 100 ?
+          <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
+          :
+          <p>ENERGY: {this.props.store.pet.energy}/100</p>
+          }    
         </div>
       </div> 
     );

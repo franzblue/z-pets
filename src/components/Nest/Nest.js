@@ -6,10 +6,17 @@ import NestItem from '../NestItem/NestItem';
 
 class Nest extends Component {
 
+
+  walkPet = () => {
+    console.log('clicked walk');
+    this.props.history.push('/walking');
+  }
+
   render() {
     return (
-      <div>
+      <div className="petInfo">
         <NestItem />
+        <button className="btn" onClick={this.walkPet}>Walk</button>
       </div>
     );
   }
