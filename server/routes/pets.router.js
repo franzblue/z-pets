@@ -38,8 +38,8 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
-router.put("/:id", rejectUnauthenticated, (req, res) => {
-    console.log('hello from router', req.params.id);
+router.put("/feed/:id", rejectUnauthenticated, (req, res) => {
+    console.log('hello from feed router', req.params.id);
     const queryText = `UPDATE "z-pet" SET "health" = "health" + 10, "weight" = "weight" + 1 WHERE "id" = $1;`;
     pool
       .query(queryText, [req.params.id])
@@ -52,9 +52,23 @@ router.put("/:id", rejectUnauthenticated, (req, res) => {
       });
 });
   
-router.put("/lower/:id", rejectUnauthenticated, (req, res) => {
-  console.log('hello from router', req.params.id);
+router.put("/hunger/:id", rejectUnauthenticated, (req, res) => {
+  console.log('hello from hunger router', req.params.id);
   const queryText = `UPDATE "z-pet" SET "health" = "health" - 10 WHERE "id" = $1;`;
+  pool
+    .query(queryText, [req.params.id])
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      res.sendStatus(500);
+      alert("error", error);
+    });
+});
+
+router.put("/walk/:id", rejectUnauthenticated, (req, res) => {
+  console.log('hello from walk router', req.params.id);
+  const queryText = `UPDATE "z-pet" SET "energy" = "energy" - 10 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])
     .then(() => {

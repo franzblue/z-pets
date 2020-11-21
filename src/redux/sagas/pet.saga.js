@@ -22,20 +22,31 @@ function* getPet() {
 
 function* feedPet(action) {
     try {
-        yield axios.put(`/api/pets/${action.payload}`, action.payload);
+        yield axios.put(`/api/pets/feed/${action.payload}`, action.payload);
         yield put( {type: 'GET_PET'} );
     }
     catch (error) {
         console.log('feeding pet failed', error);
     }
 }
+
 function* hungerPet(action) {
   try {
-    yield axios.put(`/api/pets/lower/${action.payload}`, action.payload);
+    yield axios.put(`/api/pets/hunger/${action.payload}`, action.payload);
     yield put( {type: 'GET_PET'} );
   }
   catch (error) {
     console.log('lowering food failed', error);
+  }
+}
+
+function* walkPet(action) {
+  try {
+      yield axios.put(`/api/pets/walk/${action.payload}`, action.payload);
+      yield put( {type: 'GET_PET'} );
+  }
+  catch (error) {
+      console.log('walking pet failed', error);
   }
 }
 
@@ -44,6 +55,7 @@ function* petSaga() {
     yield takeLatest('SELECT_PET', selectPet);
     yield takeLatest('FEED', feedPet);
     yield takeLatest('LOWER_FOOD', hungerPet);
+    yield takeLatest('WALK', walkPet);
   }
   
   export default petSaga;
