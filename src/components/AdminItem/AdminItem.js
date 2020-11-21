@@ -44,7 +44,7 @@ class AdminItem extends Component {
             <td>{this.props.item.health}</td>
             <td>{this.props.item.energy}</td>
             <td>{this.props.item.user_id}</td>
-            <td onClick={this.delete}><span role="img" aria-labelledby="trash bin">🗑️ </span></td>
+            <td className="trash" onClick={this.delete}><span role="img" aria-labelledby="trash bin">🗑️ </span></td>
       </tr>
     );
   }

@@ -13,7 +13,7 @@ function* adminGetPet() {
 
 function* adminDelete(action) {
     console.log('delete request', action);
-    try{
+    try {
         yield axios.delete(`/api/admin/${action.payload}`);
         yield put ( {type: 'GET_ADMIN_PET'} );
     } catch (error) {
@@ -33,7 +33,7 @@ function* adminGetUser() {
 
 function* adminDeleteUser(action) {
     console.log('delete request', action);
-    try{
+    try {
         yield axios.delete(`/api/admin/user/${action.payload}`);
         yield put ( {type: 'GET_ADMIN_USER'} );
     } catch (error) {
@@ -43,13 +43,22 @@ function* adminDeleteUser(action) {
 
 function* updateLastLogged(action) {
     console.log('update last logged', action.payload);
-    try{
+    try {
         yield axios.put(`/api/admin/user/${action.payload}`);
     } catch (error) {
-        console.log('error', error);
+        console.log('error in last logged', error);
     }
 }
 
+function* makeAdmin(action) {
+    console.log('in make Admin saga', action.payload);
+    try {
+        yield axios.put(`/api/admin/create/${action.payload}`);
+        yield put ( {type: 'GET_ADMIN_USER'} );
+    } catch (error) {
+        console.log('error in make admin', error);
+    }
+}
 
 function* adminSaga() {
     yield takeLatest('GET_ADMIN_PET', adminGetPet);
@@ -57,6 +66,7 @@ function* adminSaga() {
     yield takeLatest('GET_ADMIN_USER', adminGetUser);
     yield takeLatest('DELETE_USER', adminDeleteUser);
     yield takeLatest('LAST_LOGGED', updateLastLogged);
+    yield takeLatest('MAKE_ADMIN', makeAdmin);
   }
   
   export default adminSaga;
