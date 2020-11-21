@@ -37,6 +37,7 @@ class Admin extends Component {
                         <th>Temperament</th>
                         <th>Health</th>
                         <th>Energy</th>
+                        <th>Weight</th>
                         <th>User_Id</th>
                         <th>Delete</th>
                     </tr>
@@ -50,7 +51,7 @@ class Admin extends Component {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td className="foot" colSpan="8"></td>
+                        <td className="foot" colSpan="9"></td>
                     </tr>
                 </tfoot>
             </table>

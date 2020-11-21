@@ -8,6 +8,7 @@
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
+    animation-delay: 2s;
   }
   
   @keyframes happyWalk {
@@ -47,6 +48,7 @@
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
+    animation-delay: 2s;
   }
   
   @keyframes sadWalk {
@@ -86,6 +88,7 @@
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
+    animation-delay: 2s;
   }
   
   @keyframes angryWalk {
@@ -135,6 +138,7 @@
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
+    animation-delay: 2s;
   }
   
   @keyframes aloofWalk {
