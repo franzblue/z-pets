@@ -52,5 +52,19 @@ router.put("/:id", rejectUnauthenticated, (req, res) => {
       });
 });
   
+router.put("/lower/:id", rejectUnauthenticated, (req, res) => {
+  console.log('hello from router', req.params.id);
+  const queryText = `UPDATE "z-pet" SET "health" = "health" - 10 WHERE "id" = $1;`;
+  pool
+    .query(queryText, [req.params.id])
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      res.sendStatus(500);
+      alert("error", error);
+    });
+});
+
 
 module.exports = router;

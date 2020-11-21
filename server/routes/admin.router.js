@@ -52,7 +52,6 @@ router.delete('/user/:id', (req, res) => {
 });
 
 router.put('/user/:id', (req, res) => {
-    console.log(req.params.id);
     let userId = req.params.id;
     let queryText = `UPDATE "user" SET "last_logged" = NOW() WHERE id = $1;`;
     pool.query(queryText, [userId]).then((result) => {

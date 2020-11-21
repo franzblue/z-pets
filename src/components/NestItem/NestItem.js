@@ -6,10 +6,6 @@ import swal from 'sweetalert';
 
 class NestItem extends Component {
 
-  state = {
-    hungery: 100
-  }
-
     componentDidMount = () => {
         this.getPet();
         this.hungeryFunction();
@@ -17,9 +13,7 @@ class NestItem extends Component {
 
       hungeryFunction = () => {
         setTimeout(() => {
-          this.setState( {
-            hungery: this.state.hungery - 10
-          })}, 1000);
+          this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})}, 6000);
       }
 
       getPet = () => {
@@ -61,8 +55,6 @@ class NestItem extends Component {
     return (
       <div>
           {JSON.stringify(this.props.store.pet)}
-          <br/>
-          <p>Hunger Level Test: {JSON.stringify(this.state.hungery)}</p>
           <div className="petAnimation">
             { this.petAnimation() }
             <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
