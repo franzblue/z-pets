@@ -61,6 +61,16 @@ function* getCrickets() {
   }
 }
 
+function* goToSleep(action) {
+  try {
+    yield axios.put(`/api/pets/sleep/${action.payload}`, action.payload);
+    yield put( {type: 'GET_PET'} );
+  }
+  catch (error) {
+    console.log('going to sleep failed', error);
+}
+}
+
 function* petSaga() {
     yield takeLatest('GET_PET', getPet);
     yield takeLatest('SELECT_PET', selectPet);
@@ -68,6 +78,7 @@ function* petSaga() {
     yield takeLatest('LOWER_FOOD', hungerPet);
     yield takeLatest('WALK', walkPet);
     yield takeLatest('GET_ALL_CRICKETS', getCrickets);
+    yield takeLatest('GO_SLEEP', goToSleep);
   }
   
   export default petSaga;

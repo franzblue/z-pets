@@ -5,6 +5,10 @@ import swal from 'sweetalert';
 
 
 class NestItem extends Component {
+  state = {
+    awake: true
+  }
+
 
     componentDidMount = () => {
         this.getPet();
@@ -32,37 +36,62 @@ class NestItem extends Component {
         }
       }
 
+      goToSleep = () => {
+        console.log('clicked sleepy');
+        this.setState(  {
+          awake: !this.state.awake
+        }
+        );
+        setTimeout(() => {
+          this.props.dispatch( {type:'GO_SLEEP', payload: this.props.store.pet.id})}, 6000);
+      }
+      
       petAnimation = () => {
-        if(this.props.store.pet.temperament === "Happy") {
+        if(this.state.awake === true) {
+          if(this.props.store.pet.temperament === "Happy") {
+                // need to return JSX
+                return <div className="happy"></div>;
+            } else if(this.props.store.pet.temperament === "Sad") {
+                // need to return JSX
+                return <div className="sad"></div>;
+            } else if(this.props.store.pet.temperament === "Angry") {
+                // need to return JSX
+                return <div className="angry"></div>;
+            } else if(this.props.store.pet.temperament === "Aloof") {
+                // need to return JSX
+                return <div className="aloof"></div>;
+        }       
+        } else if(this.state.awake === false){
             // need to return JSX
-            return <div className="happy"></div>;
-        } else if(this.props.store.pet.temperament === "Sad") {
-            // need to return JSX
-            return <div className="sad"></div>;
-        } else if(this.props.store.pet.temperament === "Angry") {
-            // need to return JSX
-            return <div className="angry"></div>;
-        } else if(this.props.store.pet.temperament === "Aloof") {
-            // need to return JSX
-            return <div className="aloof"></div>;
-        } else {
-            // need to return JSX
-            return  <p>SLEEPING</p>;
+            return  <div className="sleepy"></div>;
         }
     }
 
   render() {
     return (
       <div>
+        {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)}
           <div className="petAnimation">
             { this.petAnimation() }
+            {this.state.awake === true ?
             <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+            :
+            <img src="https://images.fineartamerica.com/images-medium-large-5/a-scenic-night-in-binbrook-kerry-ann-lecky-hepburn.jpg" alt="rolling plains at night"/>
+            }
           </div>
-          
+        
         <div>
-          <p>Z-Pet Name: {this.props.store.pet.name} Owner: {this.props.store.user.username}</p>
-          <button className="btn" onClick={this.feedPet}>Feed</button>
+          <p>Z-Pet: {this.props.store.pet.name}</p>
+          <p>Owner: {this.props.store.user.username}</p>
+          <div>
+            <button className="btn" onClick={this.feedPet}>Feed</button>
+            {this.state.awake === true ?
+            <button className="btn" onClick={this.goToSleep}>Sleep</button>
+            :
+            <button className="btn" onClick={this.goToSleep}>Awaken</button>
+            }
+          </div>
           {this.props.store.pet.health === 100 ?
           <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
           :

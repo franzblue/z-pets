@@ -29,7 +29,11 @@ class Walking extends Component {
     } else {
         return  <p>SLEEPING</p>;
     }
-}
+    }
+
+    lookAround = () => {
+        console.log('clicked look around');
+    }
 
   render() {
     return (
@@ -39,6 +43,7 @@ class Walking extends Component {
             { this.petWalk() }
             <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/anime-cityscape-landscape-scenery-4k_1541975011.jpg" alt="cityscape"/>
         </div>
+        <button className="btn" onClick={this.lookAround}>Look Around</button>
     </div>
     );
   }
