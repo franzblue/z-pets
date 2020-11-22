@@ -68,13 +68,12 @@ class Test extends Component {
       <tr>
             <td>{this.props.item.id}</td>
             <td>{this.props.item.username}</td>
-            <td>{this.props.item.password}</td>
+            <td>{this.props.item.last_logged.substring(0, 16)}</td>
             {this.props.item.admin === true ?
             <td className="admin">{this.props.item.admin.toString()}</td>
             :
             <td className="notAdmin" onClick={this.makeAdmin}>{this.props.item.admin.toString()}</td>
             }  
-            <td>{this.props.item.last_logged.substring(0, 16)}</td>
             <td className="trash" onClick={this.delete}><span role="img" aria-labelledby="trash bin">🗑️ </span></td>
       </tr>
     );

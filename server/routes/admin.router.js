@@ -18,7 +18,7 @@ const {
 
   router.get('/user', rejectUnauthenticated, (req, res) => {
     // GET route code here
-    const queryText = `SELECT * FROM "user";`
+    const queryText = `SELECT "id", "username", "admin", "last_logged" FROM "user";`
     pool.query(queryText)
       .then((results) => res.send(results.rows))
       .catch((error) => {

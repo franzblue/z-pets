@@ -63,9 +63,8 @@ class Admin extends Component {
                     <tr>
                         <th>Id</th>
                         <th>Username</th>
-                        <th>Password</th>
-                        <th>Admin</th>
                         <th>Last Logged</th>
+                        <th>Admin</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -78,7 +77,7 @@ class Admin extends Component {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td className="foot" colSpan="6"></td>
+                        <td className="foot" colSpan="5"></td>
                     </tr>
                 </tfoot>
             </table>

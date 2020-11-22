@@ -35,6 +35,10 @@ class Walking extends Component {
         console.log('clicked look around');
     }
 
+    goHome = () => {
+      this.props.history.push('/nest');
+    }
+
   render() {
     return (
       <div>
@@ -44,6 +48,7 @@ class Walking extends Component {
             <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/anime-cityscape-landscape-scenery-4k_1541975011.jpg" alt="cityscape"/>
         </div>
         <button className="btn" onClick={this.lookAround}>Look Around</button>
+        <button className="btn" onClick={this.goHome}>Go Back Home</button>
     </div>
     );
   }
