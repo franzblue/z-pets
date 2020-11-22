@@ -40,7 +40,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
 router.put("/feed/:id", rejectUnauthenticated, (req, res) => {
     console.log('hello from feed router', req.params.id);
-    const queryText = `UPDATE "z-pet" SET "health" = "health" + 10, "weight" = "weight" + 1 WHERE "id" = $1;`;
+    const queryText = `UPDATE "z-pet" SET "health" = "health" + 10, "weight" = "weight" + 1, "crickets_eaten" = "crickets_eaten" + 1 WHERE "id" = $1;`;
     pool
       .query(queryText, [req.params.id])
       .then(() => {
@@ -80,5 +80,17 @@ router.put("/walk/:id", rejectUnauthenticated, (req, res) => {
     });
 });
 
+router.get('/crickets', rejectUnauthenticated, (req, res) => {
+  const queryText = `SELECT SUM("crickets_eaten") FROM "z-pet";`;
+  pool.query(queryText)
+    .then((results) => {
+      let crickets = results.rows[0]
+      res.send(crickets)
+    })
+    .catch((error) => {
+      console.log(error);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;
