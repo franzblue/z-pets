@@ -43,19 +43,21 @@ class PetOne extends Component {
   render() {
     return (
       <div>
-
-        <div className="petAnimation">
-          <p className='happy'></p>
-          <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+        <div className="petInfo">
+          <div className="petAnimation">
+            <p className='happy'></p>
+            <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+          </div>
+          <div className="petInfo2">
+            <h2>{this.state.temperament}</h2>
+            <p>Happy Z-Pets love to play and frolic outdoors.</p>
+            <p>They also tell the best jokes!</p>
+          </div>
+          <button className="btn" onClick={this.prevPage}>Back to HomePage</button>
+          <button className="btn" onClick={this.nextPage}>View next pet</button>
+          <br/><br/><input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input><br/>
+          <button className="btn" onClick={this.selectPet}>Select this Pet!</button>
         </div>
-        <h2>{this.state.temperament}</h2>
-        <p>Happy Z-Pets love to play and frolic outdoors.</p>
-        <p>They also tell the best jokes!</p>
-        <button onClick={this.prevPage}>Back to HomePage</button>
-        <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
-        <button onClick={this.nextPage}>View next pet</button>
-        <br/>
-        <button onClick={this.selectPet}>Select this Pet!</button>
       </div>
     );
   }

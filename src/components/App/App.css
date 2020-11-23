@@ -21,6 +21,14 @@ body,
   margin-right: 15%;
 }
 
+.petInfo2 {
+  border: 4px darkmagenta double;
+  background-color: lavender;
+  border-radius: 50%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 img {
   box-sizing: border-box;
 }
@@ -367,7 +375,7 @@ Aloof
   -webkit-animation: sleepy 1s infinite;
   -moz-animation: sleepy 1s infinite;
   -o-animation: sleepy 1s infinite;
-  top: 17em; right: 17em; left: 8em; bottom: 25em;
+  top: 25em; right: 17em; left: 8em; bottom: 25em;
 }
 
 @keyframes sleepy {
