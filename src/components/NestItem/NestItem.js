@@ -26,14 +26,21 @@ class NestItem extends Component {
       }
 
       feedPet = () => {
-        if(this.props.store.pet.health !== 100) {
-          console.log('clicked feed');
-          this.props.dispatch( {type: 'FEED', payload: this.props.store.pet.id} );
-        } else {
-            swal("100/100", `Looks like ${this.props.store.pet.name} is full!`, "warning", {
-            button: "Aww yiss!",
-        });
+        if(this.state.awake === true) {
+          if(this.props.store.pet.health !== 100) {
+            console.log('clicked feed');
+            this.props.dispatch( {type: 'FEED', payload: this.props.store.pet.id} );
+          } else {
+              swal("100/100", `Looks like ${this.props.store.pet.name} is full!`, "warning", {
+              button: "Aww yiss!",
+          });
+          } 
         }
+        else {
+          swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, "info", {
+            button: "Cute lil sleepy head",
+        });
+      }
       }
 
       goToSleep = () => {

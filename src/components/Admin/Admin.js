@@ -27,7 +27,7 @@ class Admin extends Component {
         <div>
                                     <p>current z-pet: {JSON.stringify(this.props.store.pet)}</p>
                                     <p>all z-pets: {JSON.stringify(this.props.store.admin)}</p>
-            <h2>Z-Pets Table</h2>
+            <h2>Z-Pet Table</h2>
             <table>
                 <thead>
                     <tr>
@@ -57,7 +57,7 @@ class Admin extends Component {
             </table>
                                     <p>current user: {JSON.stringify(this.props.store.user)}</p>
                                     <p>all users: {JSON.stringify(this.props.store.adminUser)}</p>
-            <h2>Users Table</h2>
+            <h2>User Table</h2>
             <table>
                 <thead>
                     <tr>
