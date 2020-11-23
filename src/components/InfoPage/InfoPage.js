@@ -21,8 +21,7 @@ class InfoPage extends Component {
 
   render() {
     return (
-      <div>
-        {JSON.stringify(this.props.store.crickets)}
+      <div className="petInfo2">
         <h2>STATISTICS</h2>
         <p>{this.props.store.pet.name}'s weight: {this.props.store.pet.weight} grams</p>
         <p>TOTAL CRICKETS EATEN BY ALL Z-PETS: {this.props.store.crickets.sum}</p>

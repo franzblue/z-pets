@@ -81,6 +81,7 @@ class Admin extends Component {
                     </tr>
                 </tfoot>
             </table>
+            <p>*Small disclaimer: User's Z-Pet must be deleted first, before the User will be able to be deleted.</p>
       </div>
     );
   }

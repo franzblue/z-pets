@@ -85,8 +85,8 @@ class NestItem extends Component {
   render() {
     return (
       <div>
-        {/* {JSON.stringify(this.state.awake)}
-          {JSON.stringify(this.props.store.pet)} */}
+        {JSON.stringify(this.state.awake)}
+          {JSON.stringify(this.props.store.pet)}
           <div className="container-fluid">
             <div className="petAnimation">
               { this.petAnimation() }

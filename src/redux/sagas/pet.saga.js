@@ -5,6 +5,7 @@ function* selectPet(action) {
   console.log(action.payload);
   try {
     yield axios.post('/api/pets', action.payload);
+    yield put( {type: 'GET_PET'} );
   } catch (error) {
     console.log(error);
   }
