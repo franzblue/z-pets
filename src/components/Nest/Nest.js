@@ -23,9 +23,11 @@ class Nest extends Component {
 
   render() {
     return (
-      <div className="petInfo">
-        <NestItem />
-        <button className="btn" onClick={this.walkPet}>Walk</button>
+      <div className="container-fluid">
+        <div className="petInfo">
+          <NestItem />
+          <button className="btn" onClick={this.walkPet}>Walk</button>
+        </div>
       </div>
     );
   }

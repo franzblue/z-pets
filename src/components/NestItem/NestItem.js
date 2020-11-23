@@ -13,11 +13,19 @@ class NestItem extends Component {
     componentDidMount = () => {
         this.getPet();
         this.hungeryFunction();
+        this.checkHealth();
       }
 
       hungeryFunction = () => {
         setTimeout(() => {
           this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})}, 6000);
+      }
+
+      checkHealth = () => {
+        console.log('in check health');
+        if(this.props.store.pet.health < 10) {
+          this.props.dispatch( {type: 'MINUS_HEALTH', payload: this.props.store.pet.id})
+        }
       }
 
       getPet = () => {
@@ -79,15 +87,16 @@ class NestItem extends Component {
       <div>
         {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)}
-          <div className="petAnimation">
-            { this.petAnimation() }
-            {this.state.awake === true ?
-            <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
-            :
-            <img src="https://images.fineartamerica.com/images-medium-large-5/a-scenic-night-in-binbrook-kerry-ann-lecky-hepburn.jpg" alt="rolling plains at night"/>
-            }
+          <div className="container-fluid">
+            <div className="petAnimation">
+              { this.petAnimation() }
+              {this.state.awake === true ?
+              <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+              :
+              <img src="https://images.fineartamerica.com/images-medium-large-5/a-scenic-night-in-binbrook-kerry-ann-lecky-hepburn.jpg" alt="rolling plains at night"/>
+              }
+            </div>
           </div>
-        
         <div>
           <p>Z-Pet: {this.props.store.pet.name}</p>
           <p>Owner: {this.props.store.user.username}</p>

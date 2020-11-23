@@ -71,6 +71,16 @@ function* goToSleep(action) {
 }
 }
 
+function* minusHealth(action) {
+  try {
+    yield axios.put(`/api/pets/hurt/${action.payload}`, action.payload)
+    yield put( {type: 'GET_PET'} );
+  }
+  catch (error) {
+    console.log('hurting pet failed', error);
+  }
+}
+
 function* petSaga() {
     yield takeLatest('GET_PET', getPet);
     yield takeLatest('SELECT_PET', selectPet);
@@ -79,6 +89,7 @@ function* petSaga() {
     yield takeLatest('WALK', walkPet);
     yield takeLatest('GET_ALL_CRICKETS', getCrickets);
     yield takeLatest('GO_SLEEP', goToSleep);
+    yield takeLatest('MINUS_HEALTH', minusHealth);
   }
   
   export default petSaga;
