@@ -14,7 +14,15 @@ class NestItem extends Component {
         this.getPet();
         this.hungeryFunction();
         this.checkHealth();
+        this.agePet();
       }
+
+      agePet = () => {
+        console.log('aging pet', this.props.store.pet.age);
+        setInterval(() => {
+          this.props.dispatch( {type:'AGE_PET', payload: this.props.store.pet.id})}, 1000);
+      }
+   
 
       hungeryFunction = () => {
         setInterval(() => {

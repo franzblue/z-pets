@@ -10,6 +10,19 @@ class Walking extends Component {
 
   componentDidMount = () => {
     this.getPet();
+    this.agePet();
+    this.walkPet();
+  }
+
+  walkPet = () => {
+    setInterval(() => {
+        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 4000); 
+    }
+
+  agePet = () => {
+    console.log('aging pet', this.props.store.pet.age);
+    setInterval(() => {
+      this.props.dispatch( {type:'AGE_PET', payload: this.props.store.pet.id})}, 1000);
   }
 
   getPet = () => {
