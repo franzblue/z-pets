@@ -17,7 +17,7 @@ class NestItem extends Component {
       }
 
       hungeryFunction = () => {
-        setTimeout(() => {
+        setInterval(() => {
           this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})}, 6000);
       }
 

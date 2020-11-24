@@ -7,6 +7,17 @@ import swal from 'sweetalert';
 
 class Nest extends Component {
 
+  state = {
+    curTime: null,
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        curTime : new Date().toLocaleString()
+      })
+    }, 1000)
+  }
 
   walkPet = () => {
     console.log('clicked walk');
@@ -24,6 +35,7 @@ class Nest extends Component {
   render() {
     return (
       <div className="container-fluid">
+        <p>Current Time: {this.state.curTime}</p>
         <div className="petInfo">
           <NestItem />
           <button className="btn" onClick={this.walkPet}>Walk</button>
