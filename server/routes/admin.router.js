@@ -7,6 +7,7 @@ const {
 
   router.get('/', rejectUnauthenticated, (req, res) => {
     // GET route code here
+    // Data to populate admin table
     const queryText = `SELECT * FROM "z-pet";`
     pool.query(queryText)
       .then((results) => res.send(results.rows))
@@ -18,6 +19,7 @@ const {
 
   router.get('/user', rejectUnauthenticated, (req, res) => {
     // GET route code here
+    // Data to populate admin table, omits password
     const queryText = `SELECT "id", "username", "admin", "last_logged" FROM "user";`
     pool.query(queryText)
       .then((results) => res.send(results.rows))
@@ -28,6 +30,7 @@ const {
   });
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
+    // route to delete unruly z-pets
     let petId = req.params.id;
     let queryText = `DELETE FROM "z-pet" WHERE "id" = $1;`;
     pool.query(queryText, [petId]).then((result) => {
@@ -40,6 +43,7 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
 });
 
 router.delete('/user/:id', rejectUnauthenticated, (req, res) => {
+    // route to delete users
     let userId = req.params.id;
     let queryText = `DELETE FROM "user" WHERE "id" = $1;`;
     pool.query(queryText, [userId]).then((result) => {
@@ -52,6 +56,7 @@ router.delete('/user/:id', rejectUnauthenticated, (req, res) => {
 });
 
 router.put('/user/:id', rejectUnauthenticated, (req, res) => {
+    // tracks when a user last logged in
     let userId = req.params.id;
     let queryText = `UPDATE "user" SET "last_logged" = NOW() WHERE id = $1;`;
     pool.query(queryText, [userId]).then((result) => {
@@ -64,6 +69,7 @@ router.put('/user/:id', rejectUnauthenticated, (req, res) => {
 });
 
 router.put('/create/:id', rejectUnauthenticated, (req, res) => {
+    // this grants admin privileges to user
   let userId = req.params.id;
   let queryText = `UPDATE "user" SET "admin" = true WHERE id = $1;`;
   pool.query(queryText, [userId]).then((result) => {

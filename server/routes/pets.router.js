@@ -5,11 +5,9 @@ const {
     rejectUnauthenticated,
   } = require('../modules/authentication-middleware');
 
-/**
- * GET route template
- */
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
+  // get all pet data
   const user = req.user.id
   const queryText = `SELECT * FROM "z-pet"  
                      WHERE "z-pet"."user_id" = $1 LIMIT 1;`
@@ -21,11 +19,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
-/**
- * POST route template
- */
 router.post('/', rejectUnauthenticated, (req, res) => {
   // POST route code here
+  // creates new z-pet
   console.log('POST pets route with:', req.user);
   const name = req.body.name;
   const temperament = req.body.temperament;
@@ -39,7 +35,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 });
 
 router.put("/feed/:id", rejectUnauthenticated, (req, res) => {
-    console.log('hello from feed router', req.params.id);
+  // increases pet health after feeding
     const queryText = `UPDATE "z-pet" SET "health" = "health" + 10, "weight" = "weight" + 1, "crickets_eaten" = "crickets_eaten" + 1 WHERE "id" = $1;`;
     pool
       .query(queryText, [req.params.id])
@@ -53,7 +49,7 @@ router.put("/feed/:id", rejectUnauthenticated, (req, res) => {
 });
   
 router.put("/hunger/:id", rejectUnauthenticated, (req, res) => {
-  console.log('hello from hunger router', req.params.id);
+  // decreases pet health due to hunger
   const queryText = `UPDATE "z-pet" SET "health" = "health" - 10 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])
@@ -67,7 +63,7 @@ router.put("/hunger/:id", rejectUnauthenticated, (req, res) => {
 });
 
 router.put("/walk/:id", rejectUnauthenticated, (req, res) => {
-  console.log('hello from walk router', req.params.id);
+  // tires out pet after walking
   const queryText = `UPDATE "z-pet" SET "energy" = "energy" - 10 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])
@@ -81,6 +77,7 @@ router.put("/walk/:id", rejectUnauthenticated, (req, res) => {
 });
 
 router.get('/crickets', rejectUnauthenticated, (req, res) => {
+  // statistic for how many crickets eaten by all pets
   const queryText = `SELECT SUM("crickets_eaten") FROM "z-pet";`;
   pool.query(queryText)
     .then((results) => {
@@ -94,7 +91,7 @@ router.get('/crickets', rejectUnauthenticated, (req, res) => {
 });
 
 router.put("/sleep/:id", rejectUnauthenticated, (req, res) => {
-  console.log('hello from sleep router', req.params.id);
+  // increases energy as pet sleeps
   const queryText = `UPDATE "z-pet" SET "energy" = "energy" + 10 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])
@@ -108,7 +105,7 @@ router.put("/sleep/:id", rejectUnauthenticated, (req, res) => {
 });
 
 router.put("/hurt/:id", rejectUnauthenticated, (req, res) => {
-  console.log('hello from sleep router', req.params.id);
+  // lowers happy of pet
   const queryText = `UPDATE "z-pet" SET "happy" = "happy" - 10 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])
@@ -122,7 +119,7 @@ router.put("/hurt/:id", rejectUnauthenticated, (req, res) => {
 });
 
 router.put("/age/:id", rejectUnauthenticated, (req, res) => {
-  console.log('hello from age router', req.params.id);
+  // route to track pets age
   const queryText = `UPDATE "z-pet" SET "age" = "age" + 1 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])

@@ -15,6 +15,7 @@ class NestItem extends Component {
         this.hungeryFunction();
         this.checkHealth();
         this.agePet();
+        this.isSleeping();
       }
 
       agePet = () => {
@@ -41,6 +42,14 @@ class NestItem extends Component {
         this.props.dispatch( {type:'GET_PET'} );
       }
 
+      isSleeping = () => {
+        console.log('sleeping');
+        setInterval(() => {
+          if(this.state.awake === false) {
+            this.props.dispatch( {type:'GO_SLEEP', payload: this.props.store.pet.id})}
+        }, 2000);
+      }
+
       feedPet = () => {
         if(this.state.awake === true) {
           if(this.props.store.pet.health !== 100) {
@@ -65,8 +74,6 @@ class NestItem extends Component {
           awake: !this.state.awake
         }
         );
-        setTimeout(() => {
-          this.props.dispatch( {type:'GO_SLEEP', payload: this.props.store.pet.id})}, 6000);
       }
       
       petAnimation = () => {

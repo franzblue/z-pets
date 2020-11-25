@@ -16,7 +16,7 @@ class Walking extends Component {
 
   walkPet = () => {
     setInterval(() => {
-        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 4000); 
+        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 6000); 
     }
 
   agePet = () => {
