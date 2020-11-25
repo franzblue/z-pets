@@ -93,6 +93,11 @@ class NestItem extends Component {
                   return <div className="aloof"></div>;
           }
         }
+          else if (this.props.store.pet.age === 100) {
+            swal("Wow!", `${this.props.store.pet.name} is evolving!`, "info", {
+              button: "Life is so amazing",
+          });
+          }
           else if (this.props.store.pet.age <= 100) {
             return <div className="baby"></div>;
           }
