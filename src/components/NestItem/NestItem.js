@@ -16,10 +16,17 @@ class NestItem extends Component {
         this.checkHealth();
         this.agePet();
         this.isSleeping();
+        this.tirePet();
       }
 
+      tirePet = () => {
+        setInterval(() => {
+          if(this.state.awake === true) {
+            this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}
+          }, 13000);
+        }
+
       agePet = () => {
-        console.log('aging pet', this.props.store.pet.age);
         setInterval(() => {
           this.props.dispatch( {type:'AGE_PET', payload: this.props.store.pet.id})}, 1000);
       }
@@ -27,7 +34,9 @@ class NestItem extends Component {
 
       hungeryFunction = () => {
         setInterval(() => {
-          this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})}, 6000);
+          if(this.state.awake === true) {
+          this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})}
+        }, 6000);
       }
 
       checkHealth = () => {
@@ -74,6 +83,12 @@ class NestItem extends Component {
           awake: !this.state.awake
         }
         );
+      }
+
+      fakeFunction = () => {
+        swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, "info", {
+          button: "Cute lil sleepy head",
+      });
       }
       
       petAnimation = () => {
@@ -142,8 +157,13 @@ class NestItem extends Component {
           <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
           :
           <p>ENERGY: {this.props.store.pet.energy}/100</p>
-          }    
+          }
         </div>
+        {this.state.awake === true ?
+        <button className="btn" onClick={this.props.walkPet}>Walk</button>
+        :
+        <button className="btn" onClick={this.fakeFunction}>Walk</button>
+        }
       </div> 
     );
   }

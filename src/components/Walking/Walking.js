@@ -20,7 +20,6 @@ class Walking extends Component {
     }
 
   agePet = () => {
-    console.log('aging pet', this.props.store.pet.age);
     setInterval(() => {
       this.props.dispatch( {type:'AGE_PET', payload: this.props.store.pet.id})}, 1000);
   }
@@ -39,9 +38,7 @@ class Walking extends Component {
         return <div className="angryWalk"></div>;
     } else if(this.props.store.pet.temperament === "Aloof") {
         return <div className="aloofWalk"></div>;
-    } else {
-        return  <p>SLEEPING</p>;
-    }
+    } 
     }
 
     lookAround = () => {
@@ -55,17 +52,23 @@ class Walking extends Component {
   render() {
     return (
       <div>
-        <h2>{this.state.heading}</h2>
-        <div className="petAnimation">
-            { this.petWalk() }
-            <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/anime-cityscape-landscape-scenery-4k_1541975011.jpg" alt="cityscape"/>
-        </div>
-        <div className="petInfo">
-          <br/>
-            <button className="btn" onClick={this.lookAround}>Look Around</button>
-            <button className="btn" onClick={this.goHome}>Go Back Home</button>
-          <br/><br/>
-        </div>
+        {JSON.stringify(this.state.awake)}
+          {JSON.stringify(this.props.store.pet)}
+          <h2>{this.state.heading}</h2>
+          <div className="petAnimation">
+              { this.petWalk() }
+              <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/anime-cityscape-landscape-scenery-4k_1541975011.jpg" alt="cityscape"/>
+          </div>
+          <div className="petInfo">
+            <br/>
+              <p>Z-Pet: {this.props.store.pet.name}</p>
+              <p>Owner: {this.props.store.user.username}</p>
+              <p>HUNGER: {this.props.store.pet.health}/100</p>
+              <p>ENERGY: {this.props.store.pet.energy}/100</p>
+              <button className="btn" onClick={this.lookAround}>Look Around</button>
+              <button className="btn" onClick={this.goHome}>Go Back Home</button>
+            <br/><br/>
+          </div>
     </div>
     );
   }

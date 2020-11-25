@@ -37,8 +37,7 @@ class Nest extends Component {
       <div className="container-fluid">
         <p>Current Time: {this.state.curTime}</p>
         <div className="petInfo">
-          <NestItem />
-          <button className="btn" onClick={this.walkPet}>Walk</button>
+          <NestItem walkPet={this.walkPet}/>
         </div>
       </div>
     );
