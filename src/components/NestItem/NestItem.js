@@ -71,19 +71,24 @@ class NestItem extends Component {
       
       petAnimation = () => {
         if(this.state.awake === true) {
-          if(this.props.store.pet.temperament === "Happy") {
-                // need to return JSX
-                return <div className="happy"></div>;
-            } else if(this.props.store.pet.temperament === "Sad") {
-                // need to return JSX
-                return <div className="sad"></div>;
-            } else if(this.props.store.pet.temperament === "Angry") {
-                // need to return JSX
-                return <div className="angry"></div>;
-            } else if(this.props.store.pet.temperament === "Aloof") {
-                // need to return JSX
-                return <div className="aloof"></div>;
-        }       
+          if(this.props.store.pet.age > 100) {
+            if(this.props.store.pet.temperament === "Happy") {
+                  // need to return JSX
+                  return <div className="happy"></div>;
+              } else if(this.props.store.pet.temperament === "Sad") {
+                  // need to return JSX
+                  return <div className="sad"></div>;
+              } else if(this.props.store.pet.temperament === "Angry") {
+                  // need to return JSX
+                  return <div className="angry"></div>;
+              } else if(this.props.store.pet.temperament === "Aloof") {
+                  // need to return JSX
+                  return <div className="aloof"></div>;
+          }
+        }
+          else if (this.props.store.pet.age <= 100) {
+            return <div className="baby"></div>;
+          }
         } else if(this.state.awake === false){
             // need to return JSX
             return  <div className="sleepy"></div>;

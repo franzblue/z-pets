@@ -27,7 +27,7 @@ const {
       });
   });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
     let petId = req.params.id;
     let queryText = `DELETE FROM "z-pet" WHERE "id" = $1;`;
     pool.query(queryText, [petId]).then((result) => {
@@ -39,7 +39,7 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-router.delete('/user/:id', (req, res) => {
+router.delete('/user/:id', rejectUnauthenticated, (req, res) => {
     let userId = req.params.id;
     let queryText = `DELETE FROM "user" WHERE "id" = $1;`;
     pool.query(queryText, [userId]).then((result) => {
@@ -51,7 +51,7 @@ router.delete('/user/:id', (req, res) => {
     });
 });
 
-router.put('/user/:id', (req, res) => {
+router.put('/user/:id', rejectUnauthenticated, (req, res) => {
     let userId = req.params.id;
     let queryText = `UPDATE "user" SET "last_logged" = NOW() WHERE id = $1;`;
     pool.query(queryText, [userId]).then((result) => {
@@ -63,7 +63,7 @@ router.put('/user/:id', (req, res) => {
     });
 });
 
-router.put('/create/:id', (req, res) => {
+router.put('/create/:id', rejectUnauthenticated, (req, res) => {
   let userId = req.params.id;
   let queryText = `UPDATE "user" SET "admin" = true WHERE id = $1;`;
   pool.query(queryText, [userId]).then((result) => {

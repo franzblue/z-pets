@@ -37,6 +37,7 @@ class Admin extends Component {
                         <th>Temperament</th>
                         <th>Health</th>
                         <th>Energy</th>
+                        <th>Age</th>
                         <th>Weight</th>
                         <th>User_Id</th>
                         <th>Delete</th>
