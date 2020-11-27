@@ -133,7 +133,7 @@ router.put("/age/:id", rejectUnauthenticated, (req, res) => {
 });
 
 router.put("/poo/:id", rejectUnauthenticated, (req, res) => {
-  // route to track pets age
+  // poop route
   const queryText = `UPDATE "z-pet" SET "crickets_eaten" = "crickets_eaten" + 1 WHERE "id" = $1;`;
   pool
     .query(queryText, [req.params.id])
@@ -145,5 +145,20 @@ router.put("/poo/:id", rejectUnauthenticated, (req, res) => {
       alert("error in age", error);
     });
 });
+
+router.delete('/restart/:id', rejectUnauthenticated, (req, res) => {
+  // route to delete z-pet
+  let userId = req.params.id;
+  let queryText = `DELETE FROM "z-pet" WHERE "id" = $1;`;
+  pool.query(queryText, [userId]).then((result) => {
+      console.log(result);
+      res.sendStatus(200);
+  }).catch((error) => {
+      console.log('error in post', error);
+      res.sendStatus(500);
+  });
+});
+
+
 
 module.exports = router;

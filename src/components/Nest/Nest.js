@@ -23,7 +23,7 @@ class NestItem extends Component {
 
       petDeath= () => {
         if(this.props.store.pet.happy < 10) {
-          this.props.history.push('/death');
+          this.props.history.push('/graveyard');
         }
       }
 
@@ -38,7 +38,7 @@ class NestItem extends Component {
       tirePet = () => {
         setInterval(() => {
           if(this.state.awake === true) {
-            this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}
+            this.props.dispatch( {type:'WALK', payload: this.props.store.pet.id})}
           }, 13000);
         }
 
@@ -58,7 +58,7 @@ class NestItem extends Component {
       checkHealth = () => {
         console.log('in check health');
         if(this.props.store.pet.health < 10) {
-          this.props.dispatch( {type: 'MINUS_HEALTH', payload: this.props.store.pet.id})
+          this.props.dispatch( {type:'MINUS_HEALTH', payload: this.props.store.pet.id})
         }
       }
 
@@ -80,7 +80,7 @@ class NestItem extends Component {
         if(this.state.awake === true) {
           if(this.props.store.pet.health !== 100) {
             console.log('clicked feed');
-            this.props.dispatch( {type: 'FEED', payload: this.props.store.pet.id} );
+            this.props.dispatch( {type:'FEED', payload: this.props.store.pet.id} );
           } else {
               swal("100/100", `Looks like ${this.props.store.pet.name} is full!`, "warning", {
               button: "Aww yiss!",
@@ -95,7 +95,7 @@ class NestItem extends Component {
       }
 
       cleanPoo = () => {
-        this.props.dispatch( {type: 'POO', payload: this.props.store.pet.id} );
+        this.props.dispatch( {type:'POO', payload: this.props.store.pet.id} );
       }
 
       goToSleep = () => {

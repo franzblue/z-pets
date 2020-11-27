@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import swal from 'sweetalert';
 import './Death.css';
 
 class Death extends Component {
-  state = {
-    heading: 'Z-Dead',
-  };
 
   componentDidMount = () => {
       this.getPet();
   }
 
   getPet = () => {
-    console.log('get pet');
     this.props.dispatch( {type:'GET_PET'} );
+    this.welcomeAlert();
   }
 
   deathAnimation = () => {
@@ -30,11 +28,23 @@ class Death extends Component {
     }
   }
 
+  welcomeAlert = () => {
+    swal(`Oh no! ${this.props.store.pet.name} is dying...`);
+  }
+
+  startOver = () => {
+      console.log('clicked start over');
+      this.props.dispatch( {type:'START_OVER', payload: this.props.store.pet.id});
+      swal(`Circle of life is complete, ${this.props.store.pet.name} has passed on...`);
+      this.props.history.push('/user');
+  }
+
   render() {
     return (
       <div className="petInfo">
-        <h2>{this.state.heading}</h2>
-        <p id="box">Oh no! It looks like your Z-Pet is dying :'(</p>
+        <h2>Graveyard</h2>
+
+        
         <div className="petAnimation">
             <img src="images/graveyard.jpg" alt="graveyard"/>
         </div>
@@ -44,10 +54,11 @@ class Death extends Component {
         <p className="sadDeath"></p>
         <p className="angryDeath"></p>
         <p className="aloofDeath"></p> */}
-            <button className="btn" onClick={this.deathAnimation}>Your Z-Pet is Dead</button>
+            <button className="btn" onClick={this.startOver}>Your Z-Pet is Dead</button>
             { this.deathAnimation() }
       <div>   
-      </div>    
+      </div>
+      <p id="box">Oh no! It looks like your Z-Pet is dying :'(</p>  
       </div>
     );
   }

@@ -102,6 +102,16 @@ function* cleanPoo(action) {
   }
 }
 
+function* startOver(action) {
+  try {
+    yield axios.delete(`api/pets/restart/${action.payload}`, action.payload)
+    yield put( {type: 'UNSET_PET'} );
+  }
+  catch (error) {
+    console.log('restarting pet failed', error)
+  }
+}
+
 function* petSaga() {
     yield takeLatest('GET_PET', getPet);
     yield takeLatest('SELECT_PET', selectPet);
@@ -113,6 +123,7 @@ function* petSaga() {
     yield takeLatest('MINUS_HEALTH', minusHealth);
     yield takeLatest('AGE_PET', addAge);
     yield takeLatest('POO', cleanPoo);
+    yield takeLatest('START_OVER', startOver);
   }
   
   export default petSaga;
