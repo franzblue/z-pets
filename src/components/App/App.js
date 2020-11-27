@@ -27,6 +27,7 @@ import Admin from '../Admin/Admin';
 import Nest from '../Nest/Nest';
 import Joke from '../Joke/Joke';
 import Walking from '../Walking/Walking';
+import Death from '../Death/Death';
 
 import './App.css';
 
@@ -147,6 +148,12 @@ class App extends Component {
               exact 
               path="/joke" 
               component={Joke} 
+            />
+
+            <ProtectedRoute
+              exact 
+              path="/death" 
+              component={Death} 
             />
 
             {/* If none of the other routes matched, we will show a 404. */}

@@ -57,7 +57,7 @@ class Walking extends Component {
           <h2>{this.state.heading}</h2>
           <div className="petAnimation">
               { this.petAnimation() }
-              <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/anime-cityscape-landscape-scenery-4k_1541975011.jpg" alt="cityscape"/>
+              <img src="images/walking.jpg" alt="cityscape"/>
           </div>
           <div className="petInfo">
             <br/>

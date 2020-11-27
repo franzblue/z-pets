@@ -10,7 +10,6 @@ class NestItem extends Component {
     curTime: null,
   }
 
-
     componentDidMount = () => {
         this.getPet();
         this.hungeryFunction();
@@ -19,6 +18,13 @@ class NestItem extends Component {
         this.isSleeping();
         this.tirePet();
         this.clock();
+        this.petDeath();
+      }
+
+      petDeath= () => {
+        if(this.props.store.pet.happy < 10) {
+          this.props.history.push('/death');
+        }
       }
 
       clock = () => {
@@ -93,7 +99,6 @@ class NestItem extends Component {
       }
 
       goToSleep = () => {
-        console.log('clicked sleepy');
         this.setState(  {
           awake: !this.state.awake
         }
@@ -116,16 +121,16 @@ class NestItem extends Component {
         if(this.state.awake === true) {
           if(this.props.store.pet.age > 100) {
             if(this.props.store.pet.temperament === "Happy") {
-                  // need to return JSX
+
                   return <div className="happy"></div>;
               } else if(this.props.store.pet.temperament === "Sad") {
-                  // need to return JSX
+
                   return <div className="sad"></div>;
               } else if(this.props.store.pet.temperament === "Angry") {
-                  // need to return JSX
+
                   return <div className="angry"></div>;
               } else if(this.props.store.pet.temperament === "Aloof") {
-                  // need to return JSX
+
                   return <div className="aloof"></div>;
           }
         }
@@ -138,15 +143,13 @@ class NestItem extends Component {
             return <div className="baby"></div>;
           }
         } else if(this.state.awake === false){
-            // need to return JSX
+
             return  <div className="sleepy"></div>;
         }
     }
 
     walkPet = () => {
-      console.log('clicked walk');
       if(this.props.store.pet.energy !== 0) {
-        console.log('clicked walk');
         this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id} );
         this.props.history.push('/walking');  
       } else {
@@ -167,9 +170,9 @@ class NestItem extends Component {
               { this.petAnimation() }
               { this.poopFunction() }
               {this.state.awake === true ?
-              <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
+              <img src="images/plains.jpg" alt="rolling plains"/>
               :
-              <img src="https://images.fineartamerica.com/images-medium-large-5/a-scenic-night-in-binbrook-kerry-ann-lecky-hepburn.jpg" alt="rolling plains at night"/>
+              <img src="images/night.jpg" alt="starry night"/>
               }
             </div>
           </div>
