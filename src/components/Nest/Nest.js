@@ -70,6 +70,7 @@ class NestItem extends Component {
       }
 
       feedPet = () => {
+        this.poopFunction();
         if(this.state.awake === true) {
           if(this.props.store.pet.health !== 100) {
             console.log('clicked feed');
@@ -87,6 +88,10 @@ class NestItem extends Component {
       }
       }
 
+      cleanPoo = () => {
+        this.props.dispatch( {type: 'POO', payload: this.props.store.pet.id} );
+      }
+
       goToSleep = () => {
         console.log('clicked sleepy');
         this.setState(  {
@@ -99,6 +104,12 @@ class NestItem extends Component {
         swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, "info", {
           button: "Cute lil sleepy head",
       });
+      }
+
+      poopFunction = () => {
+        if(this.props.store.pet.crickets_eaten % 10 === 0) {
+          return <div className="poop"></div>;
+        }
       }
       
       petAnimation = () => {
@@ -154,6 +165,7 @@ class NestItem extends Component {
           <div className="container-fluid">
             <div className="petAnimation">
               { this.petAnimation() }
+              { this.poopFunction() }
               {this.state.awake === true ?
               <img src="https://mcdn.wallpapersafari.com/medium/13/67/75Wmsl.jpg" alt="rolling plains"/>
               :
@@ -165,18 +177,23 @@ class NestItem extends Component {
           <p>Z-Pet: {this.props.store.pet.name}</p>
           <p>Owner: {this.props.store.user.username}</p>
           <div>
+            {this.props.store.pet.crickets_eaten % 10 === 0 ?
+            <button className="btn" onClick={this.cleanPoo}>Clean Poo</button>
+            :
             <button className="btn" onClick={this.feedPet}>Feed</button>
+            }
+            
             {this.state.awake === true ?
             <button className="btn" onClick={this.goToSleep}>Sleep</button>
             :
             <button className="btn" onClick={this.goToSleep}>Awaken</button>
             }
           </div>
-          {this.props.store.pet.health === 100 ?
-          <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
-          :
-          <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
-          }
+              {this.props.store.pet.health === 100 ?
+              <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
+              :
+              <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
+              }
           {this.props.store.pet.energy === 100 ?
           <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
           :

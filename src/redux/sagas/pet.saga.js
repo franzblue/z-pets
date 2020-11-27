@@ -92,6 +92,16 @@ function* addAge(action) {
   }
 }
 
+function* cleanPoo(action) {
+  try {
+    yield axios.put(`/api/pets/poo/${action.payload}`, action.payload)
+    yield put( {type: 'GET_PET'} );
+  }
+  catch (error) {
+    console.log('aging pet failed', error);
+  }
+}
+
 function* petSaga() {
     yield takeLatest('GET_PET', getPet);
     yield takeLatest('SELECT_PET', selectPet);
@@ -102,6 +112,7 @@ function* petSaga() {
     yield takeLatest('GO_SLEEP', goToSleep);
     yield takeLatest('MINUS_HEALTH', minusHealth);
     yield takeLatest('AGE_PET', addAge);
+    yield takeLatest('POO', cleanPoo);
   }
   
   export default petSaga;

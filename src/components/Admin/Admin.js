@@ -52,7 +52,7 @@ class Admin extends Component {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td className="foot" colSpan="9"></td>
+                        <td className="foot" colSpan="10"></td>
                     </tr>
                 </tfoot>
             </table>
