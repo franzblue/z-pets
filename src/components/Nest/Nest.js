@@ -112,10 +112,18 @@ class NestItem extends Component {
       }
 
       poopFunction = () => {
-        if(this.props.store.pet.crickets_eaten % 10 === 0) {
-          return <div className="poop"></div>;
+        // baby pets poop twice as fast
+        if(this.props.store.pet.age < 100) {
+          if(this.props.store.pet.crickets_eaten % 5 === 0) {
+            return <div className="poop"></div>;
+          }
         }
-      }
+        else {
+          if(this.props.store.pet.crickets_eaten % 10 === 0) {
+            return <div className="poop"></div>;
+          }
+        }
+    }
       
       petAnimation = () => {
         if(this.state.awake === true) {
