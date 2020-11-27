@@ -29,7 +29,7 @@ class Walking extends Component {
     this.props.dispatch( {type:'GET_PET'} );
   }
 
-  petWalk = () => {
+  petAnimation = () => {
     if(this.props.store.pet.temperament === "Happy") {
         return <div className="happyWalk"></div>;
     } else if(this.props.store.pet.temperament === "Sad") {
@@ -56,7 +56,7 @@ class Walking extends Component {
           {JSON.stringify(this.props.store.pet)}
           <h2>{this.state.heading}</h2>
           <div className="petAnimation">
-              { this.petWalk() }
+              { this.petAnimation() }
               <img src="https://www.pixel4k.com/wp-content/uploads/2018/11/anime-cityscape-landscape-scenery-4k_1541975011.jpg" alt="cityscape"/>
           </div>
           <div className="petInfo">
