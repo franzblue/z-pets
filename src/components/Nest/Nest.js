@@ -170,6 +170,8 @@ class NestItem extends Component {
   render() {
     return (
       <div className="petInfo">
+        <p>Z-Pet: {this.props.store.pet.name}</p>
+        <p>Owner: {this.props.store.user.username}</p>
         <p>Current Time: {this.state.curTime}</p>
         {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)}
@@ -180,14 +182,13 @@ class NestItem extends Component {
               {this.state.awake === true ?
               <img src="images/plains.jpg" alt="rolling plains"/>
               :
-              <img src="images/night.jpg" alt="starry night"/>
+              <img id="night" src="images/night.jpg" alt="starry night"/>
               }
             </div>
           </div>
         <div>
-          <p>Z-Pet: {this.props.store.pet.name}</p>
-          <p>Owner: {this.props.store.user.username}</p>
           <div>
+            <br/>
             {this.props.store.pet.crickets_eaten % 10 === 0 ?
             <button className="btn" onClick={this.cleanPoo}>Clean Poo</button>
             :

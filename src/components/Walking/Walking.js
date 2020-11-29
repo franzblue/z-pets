@@ -51,7 +51,7 @@ class Walking extends Component {
 
   render() {
     return (
-      <div>
+      <div className="petInfo">
         {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)}
           <h2>{this.state.heading}</h2>
@@ -59,7 +59,7 @@ class Walking extends Component {
               { this.petAnimation() }
               <img src="images/walking.jpg" alt="cityscape"/>
           </div>
-          <div className="petInfo">
+          <div>
             <br/>
               <p>Z-Pet: {this.props.store.pet.name}</p>
               <p>Owner: {this.props.store.user.username}</p>

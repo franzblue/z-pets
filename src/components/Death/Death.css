@@ -25,10 +25,10 @@
 
   .happyDeath {
     position: absolute;
-    animation: happyDeath 4s infinite;
-    -webkit-animation: happyDeath 4s infinite;
-    -moz-animation: happyDeath 4s infinite;
-    -o-animation: happyDeath 4s infinite;
+    animation: happyDeath 4s;
+    -webkit-animation: happyDeath 4s;
+    -moz-animation: happyDeath 4s;
+    -o-animation: happyDeath 4s;
     top: 28em; right: 30em; left: 40em; bottom: 5em;
     animation-delay: 4s;
   }
@@ -58,10 +58,10 @@
 
 .sadDeath {
     position: absolute;
-    animation: sadDeath 4s infinite;
-    -webkit-animation: sadDeath 4s infinite;
-    -moz-animation: sadDeath 4s infinite;
-    -o-animation: sadDeath 4s infinite;
+    animation: sadDeath 4s;
+    -webkit-animation: sadDeath 4s;
+    -moz-animation: sadDeath 4s;
+    -o-animation: sadDeath 4s;
     top: 28em; right: 15em; left: 28em; bottom: 5em;
     animation-delay: 4s;
   }
@@ -91,10 +91,10 @@
 
   .angryDeath {
     position: absolute;
-    animation: angryDeath 4s infinite;
-    -webkit-animation: angryDeath 4s infinite;
-    -moz-animation: angryDeath 4s infinite;
-    -o-animation: angryDeath 4s infinite;
+    animation: angryDeath 4s;
+    -webkit-animation: angryDeath 4s;
+    -moz-animation: angryDeath 4s;
+    -o-animation: angryDeath 4s;
     top: 28em; right: 30em; left: 40em; bottom: 5em;
     animation-timing-function: ease;
     animation-delay: 4s;
@@ -130,10 +130,10 @@
 
   .aloofDeath {
     position: absolute;
-    animation: aloofDeath 4s infinite;
-    -webkit-animation: aloofDeath 4s infinite;
-    -moz-animation: aloofDeath 4s infinite;
-    -o-animation: aloofDeath 4s infinite;
+    animation: aloofDeath 4s;
+    -webkit-animation: aloofDeath 4s;
+    -moz-animation: aloofDeath 4s;
+    -o-animation: aloofDeath 4s;
     top: 28em; right: 30em; left: 40em; bottom: 5em;
     animation-delay: 4s;
   }

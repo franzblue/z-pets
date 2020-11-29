@@ -4,7 +4,7 @@
     -webkit-animation: happyWalk 1s infinite;
     -moz-animation: happyWalk 1s infinite;
     -o-animation: happyWalk 1s infinite;
-    top: 29em; right: 25em; left: 25em; bottom: 5em;
+    top: 28em; right: 25em; left: 25em; bottom: 5em;
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
@@ -44,7 +44,7 @@
     -webkit-animation: sadWalk 1s ;
     -moz-animation: sadWalk 1s ;
     -o-animation: sadWalk 1s ;
-    top: 29em; right: 10em; left: 10em; bottom: 5em;
+    top: 28em; right: 10em; left: 10em; bottom: 5em;
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
@@ -84,7 +84,7 @@
     -webkit-animation: angryWalk 1s infinite;
     -moz-animation: angryWalk 1s infinite;
     -o-animation: angryWalk 1s infinite;
-    top: 29em; right: 25em; left: 25em; bottom: 5em;
+    top: 28em; right: 25em; left: 25em; bottom: 5em;
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;
@@ -134,7 +134,7 @@
     -webkit-animation: aloofWalk 1s infinite;
     -moz-animation: aloofWalk 1s infinite;
     -o-animation: aloofWalk 1s infinite;
-    top: 29em; right: 12em; left: 12em; bottom: 5em;
+    top: 28em; right: 12em; left: 12em; bottom: 5em;
     animation-duration: 8s;
     animation-iteration-count: 4;
     animation-direction: alternate;

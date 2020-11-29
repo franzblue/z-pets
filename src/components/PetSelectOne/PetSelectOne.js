@@ -53,10 +53,14 @@ class PetOne extends Component {
             <p>Happy Z-Pets love to play and frolic outdoors.</p>
             <p>They also tell the best jokes!</p>
           </div>
+          {/* <span role="img" aria-labelledby="home">🏠 </span> */}
           <button className="btn" onClick={this.prevPage}>Back to HomePage</button>
           <button className="btn" onClick={this.nextPage}>View next pet</button>
-          <br/><br/><input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input><br/>
+          <i class="arrow right"></i>
+          <br/><br/>
           <button className="btn" onClick={this.selectPet}>Select this Pet!</button>
+          <br/>
+          <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
         </div>
       </div>
     );

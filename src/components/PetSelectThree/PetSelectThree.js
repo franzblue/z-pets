@@ -52,10 +52,14 @@ class PetThree extends Component {
             <p>When they channel their emotions properly they can be very passionate.</p>
             <p>Do not be frightened of angry Z-Pets!</p>
           </div>
+          <i class="arrow left"></i>
           <button className="btn" onClick={this.prevPage}>View previous pet</button>
           <button className="btn" onClick={this.nextPage}>View next pet</button>
-          <br/><br/><input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input><br/>
+          <i class="arrow right"></i>
+          <br/><br/>
           <button className="btn" onClick={this.selectPet}>Select this Pet!</button>
+          <br/>
+          <input onChange={(event) => this.handleChange(event, 'name')} type="text" placeholder="Give it a name!"></input>
         </div>
       </div>
     );

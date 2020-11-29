@@ -54,6 +54,23 @@ class LandingPage extends Component {
               Nullam non fermentum mauris. Sed in enim ac turpis faucibus
               pretium in sit amet nisi.
             </p>
+            <p>
+              <br/>
+              Hey Z-Fans!
+              <br/><br/>
+              We all know raising a Z-Pet is serious business…and it’s even more demanding when your pet is a baby! <br/>
+              As soon as your character first hatches, it’s your responsibility to give it all the love and attention possible so it can grow up to be healthy and adventurous!
+              <br/><br/>
+              Just like human babies, Z-Pet babies need to be fed….A LOT! <br/>
+              They get super hungry and need to frequently eat baby food & baby cookies so that they have the energy they need to grow! <br/>
+              Make sure that you’re feeding your pet just the right amount! <br/>
+              By checking tummy meter and their energy evel in your profile you’ll be able to decipher just how much food they need!
+              <br/><br/>
+              By following these tips and tricks on how to raise a happy newborn Z-Pet, <br/>
+              your Z-Pet will go on to live a fun and adventurous life exploring all the Z-World has to offer! 
+              <br/><br/>
+              🌎
+            </p>
           </div>
           <div className="grid-col grid-col_4">
             <RegisterForm />

@@ -42,20 +42,13 @@ class Death extends Component {
   render() {
     return (
       <div className="petInfo">
-        <h2>Graveyard</h2>
-
-        
+        <h2>Graveyard</h2>  
         <div className="petAnimation">
             <img src="images/graveyard.jpg" alt="graveyard"/>
-        </div>
-           
+        </div> 
         <p className="death">Boo!</p>
-        {/* <p className="happyDeath"></p>
-        <p className="sadDeath"></p>
-        <p className="angryDeath"></p>
-        <p className="aloofDeath"></p> */}
-            <button className="btn" onClick={this.startOver}>Your Z-Pet is Dead</button>
-            { this.deathAnimation() }
+        <button className="btn" onClick={this.startOver}>Your Z-Pet is Dead</button>
+        { this.deathAnimation() }
       <div>   
       </div>
       <p id="box">Oh no! It looks like your Z-Pet is dying :'(</p>  

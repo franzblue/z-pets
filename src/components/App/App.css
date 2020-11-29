@@ -2,12 +2,38 @@ html,
 body,
 #react-root {
   height: 100%;
+  background-color: skyblue;
 }
 
-.petAnimation, .description {
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.petAnimation {
   position: relative;
   border: 2px teal double;
   background-color: teal;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.description {
+  position: relative;
+  background-color:  #00acb0;
   border-radius: 10px;
   margin-left: 5%;
   margin-right: 5%;
@@ -29,8 +55,15 @@ body,
   margin-right: 15%;
 }
 
+#night {
+  width: auto; 
+  height: auto;
+}
+
 img {
   box-sizing: border-box;
+  width: 620px; 
+  height: 420px;
 }
 
 div {
@@ -60,6 +93,8 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
+  margin-right: 5px;
+  margin-left: 5px;
   display: inline-block;
   padding: 10px 20px;
   border-color: darkorchid;
@@ -251,7 +286,7 @@ Sad
   -webkit-animation: sad 3s infinite;
   -moz-animation: sad 3s infinite;
   -o-animation: sad 3s infinite;
-  top: 15em; right: 10em; left: 10em; bottom: 5em;
+  top: 15em; right: 10em; left: 18em; bottom: 5em;
 }
 
 @keyframes sad {
@@ -328,7 +363,7 @@ Aloof
   -webkit-animation: aloof 4s infinite;
   -moz-animation: aloof 4s infinite;
   -o-animation: aloof 4s infinite;
-  top: 15em; right: 12em; left: 12em; bottom: 5em;
+  top: 15em; right: 12em; left: 20em; bottom: 5em;
 }
 
 @keyframes aloof {
