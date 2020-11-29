@@ -5,6 +5,7 @@ import pet from './pet.reducer';
 import admin from './admin.reducer';
 import adminUser from './admin.user.reducer';
 import crickets from './cricket.reducer.js';
+import image from './image.reducer.js';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   admin,
   adminUser,
   crickets,
+  image,
 });
 
 export default rootReducer;

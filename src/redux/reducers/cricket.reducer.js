@@ -7,6 +7,6 @@ const petReducer = (state = {}, action) => {
     }
   };
   
-  // z-pet will be on the redux state at:
-  // state.pet
+  // crickets will be on the redux state at:
+  // state.crickets
   export default petReducer;

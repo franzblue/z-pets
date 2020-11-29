@@ -46,7 +46,7 @@ class PetOne extends Component {
         <div className="petInfo">
           <div className="petAnimation">
             <p className='happy'></p>
-            <img src="images/plains.jpg" alt="rolling plains"/>
+            <img src={this.props.store.image.name} alt={this.props.store.image.alt}/>
           </div>
           <div className="petInfo2">
             <h2>{this.state.temperament}</h2>

@@ -8,11 +8,17 @@ class UserPage extends Component {
  
   componentDidMount = () => {
     this.getPet();
+    this.getImage();
   }
 
   getPet = () => {
     console.log('get pet', this.props.store.pet);
     this.props.dispatch( {type:'GET_PET'} );
+  }
+
+  getImage = () => {
+    console.log('get pet', this.props.store.pet);
+    this.props.dispatch( {type:'GET_IMAGE'} );
   }
 
   nextPage = () => {
@@ -42,10 +48,11 @@ class UserPage extends Component {
   render() {
     return (
       <div className="petInfo">
+        {JSON.stringify(this.props.store.image)}
         {JSON.stringify(this.props.store.pet)}
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <div className="petAnimation">
-          <img src="images/plains.jpg"></img>
+        <img src={this.props.store.image.name} alt={this.props.store.image.alt}/>
         </div>
         <br/>
         {this.props.store.pet.name === undefined ?

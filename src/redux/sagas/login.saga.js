@@ -56,6 +56,7 @@ function* logoutUser(action) {
     yield put({ type: 'UNSET_PET' });
     yield put({ type: 'UNSET_ADMIN_USER' });
     yield put({ type: 'UNSET_ADMIN_PET' });
+    yield put({ type: 'UNSET_IMAGE' });
   } catch (error) {
     console.log('Error with user logout:', error);
   }

@@ -42,7 +42,9 @@ class Walking extends Component {
     }
 
     lookAround = () => {
-        console.log('clicked look around');
+      console.log('clicked look around');
+      this.props.dispatch( {type:'GET_IMAGE'} );
+      this.props.history.push('/nest');
     }
 
     goHome = () => {

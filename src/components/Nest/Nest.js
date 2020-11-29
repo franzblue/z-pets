@@ -180,7 +180,7 @@ class NestItem extends Component {
               { this.petAnimation() }
               { this.poopFunction() }
               {this.state.awake === true ?
-              <img src="images/plains.jpg" alt="rolling plains"/>
+              <img src={this.props.store.image.name} alt={this.props.store.image.alt}/>
               :
               <img id="night" src="images/night.jpg" alt="starry night"/>
               }
