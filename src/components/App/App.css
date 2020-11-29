@@ -5,6 +5,11 @@ body,
   background-color: skyblue;
 }
 
+.walking {
+  height: 600px;
+  width: 800px;
+}
+
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
@@ -250,7 +255,7 @@ Happy
   -webkit-animation: happy 1s infinite;
   -moz-animation: happy 1s infinite;
   -o-animation: happy 1s infinite;
-  top: 15em; right: 25em; left: 25em; bottom: 5em;
+  top: 11em; right: 25em; left: 25em; bottom: 5em;
 }
 
 @keyframes happy {
@@ -286,7 +291,7 @@ Sad
   -webkit-animation: sad 3s infinite;
   -moz-animation: sad 3s infinite;
   -o-animation: sad 3s infinite;
-  top: 15em; right: 10em; left: 18em; bottom: 5em;
+  top: 11em; right: 10em; left: 18em; bottom: 5em;
 }
 
 @keyframes sad {
@@ -322,7 +327,7 @@ Angry
   -webkit-animation: angry 1s infinite;
   -moz-animation: angry 1s infinite;
   -o-animation: angry 1s infinite;
-  top: 15em; right: 25em; left: 25em; bottom: 5em;
+  top: 11em; right: 25em; left: 25em; bottom: 5em;
   animation-timing-function: ease;
 }
 
@@ -363,7 +368,7 @@ Aloof
   -webkit-animation: aloof 4s infinite;
   -moz-animation: aloof 4s infinite;
   -o-animation: aloof 4s infinite;
-  top: 15em; right: 12em; left: 20em; bottom: 5em;
+  top: 11em; right: 12em; left: 20em; bottom: 5em;
 }
 
 @keyframes aloof {

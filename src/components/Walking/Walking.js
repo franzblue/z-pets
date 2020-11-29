@@ -59,7 +59,7 @@ class Walking extends Component {
           <h2>{this.state.heading}</h2>
           <div className="petAnimation">
               { this.petAnimation() }
-              <img src="images/walking.jpg" alt="cityscape"/>
+              <img className="walking" src="images/walking.jpg" alt="cityscape"/>
           </div>
           <div>
             <br/>
