@@ -48,8 +48,8 @@ class UserPage extends Component {
   render() {
     return (
       <div className="petInfo">
-        {JSON.stringify(this.props.store.image)}
-        {JSON.stringify(this.props.store.pet)}
+        {/* {JSON.stringify(this.props.store.image)}
+        {JSON.stringify(this.props.store.pet)} */}
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <div className="petAnimation">
         <img src={this.props.store.image.name} alt={this.props.store.image.alt}/>

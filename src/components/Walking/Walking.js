@@ -65,8 +65,8 @@ class Walking extends Component {
   render() {
     return (
       <div className="petInfo">
-        {JSON.stringify(this.state.awake)}
-          {JSON.stringify(this.props.store.pet)}
+        {/* {JSON.stringify(this.state.awake)}
+          {JSON.stringify(this.props.store.pet)} */}
           <h2>{this.state.heading}</h2>
           <div className="petAnimation">
               { this.petAnimation() }

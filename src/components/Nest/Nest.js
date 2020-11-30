@@ -95,13 +95,13 @@ class NestItem extends Component {
             console.log('clicked feed');
             this.props.dispatch( {type:'FEED', payload: this.props.store.pet.id} );
           } else {
-              swal("100/100", `Looks like ${this.props.store.pet.name} is full!`, "warning", {
+              swal("100/100", `Looks like ${this.props.store.pet.name} is full!`, {
               button: "Aww yiss!",
           });
           } 
         }
         else {
-          swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, "info", {
+          swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, {
             button: "Cute lil sleepy head",
         });
       }
@@ -119,7 +119,7 @@ class NestItem extends Component {
       }
 
       fakeFunction = () => {
-        swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, "info", {
+        swal("Shhhhh...", `Looks like ${this.props.store.pet.name} is sleeping!`, {
           button: "Cute lil sleepy head",
       });
       }
@@ -163,7 +163,7 @@ class NestItem extends Component {
           }
         }
           else if (this.props.store.pet.age === 100) {
-            swal("Wow!", `${this.props.store.pet.name} is evolving!`, "info", {
+            swal("Wow!", `${this.props.store.pet.name} is evolving!`, {
               button: "Life is so amazing",
           });
           }
@@ -193,8 +193,8 @@ class NestItem extends Component {
         <p>Z-Pet: {this.props.store.pet.name}</p>
         <p>Owner: {this.props.store.user.username}</p>
         <p>Current Time: {this.state.curTime}</p>
-        {JSON.stringify(this.state.awake)}
-          {JSON.stringify(this.props.store.pet)}
+        {/* {JSON.stringify(this.state.awake)}
+          {JSON.stringify(this.props.store.pet)} */}
           <div className="container-fluid">
             <div className="petAnimation">
               { this.petAnimation() }
