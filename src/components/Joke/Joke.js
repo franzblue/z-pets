@@ -35,9 +35,511 @@ class Joke extends Component {
     return (
       <div>
         <button className="btn" onClick={this.tellAJoke}>Ha Ha Ha</button>
+{/* 8/8 */}
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="fullBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+
+<div className="meter">
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+<div className="emptyBar">
+  <p></p>
+</div>
+</div>
+{/* 0/8 */}
       </div>
     );
   }
 }
 
 export default connect(mapStoreToProps)(Joke);
+
+// <div>
+
+// <div className="fullBar">
+//   <p></p>
+// </div>
+
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+
+
+// {/* 8/8 */}
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="fullBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+
+// <div className="meter">
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// <div className="emptyBar">
+//   <p></p>
+// </div>
+// </div>
+// {/* 0/8 */}
+
+// </div>

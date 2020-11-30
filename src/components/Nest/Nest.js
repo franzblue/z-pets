@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import Meter from '../Meter/Meter';
 import swal from 'sweetalert';
 
 
@@ -207,12 +208,17 @@ class NestItem extends Component {
             </div>
           </div>
         <div>
-          <div>
+          <div className="buttons">
             <br/>
+              {this.state.awake === true ?
+              <button className="btn" onClick={this.walkPet}>Walk</button>
+              :
+              <button className="btn" onClick={this.fakeFunction}>Walk</button>
+              }
             {this.props.store.pet.crickets_eaten % 10 === 0 ?
             <button className="btn" onClick={this.cleanPoo}>Clean Poo</button>
             :
-            <button className="btn" onClick={this.feedPet}>Feed</button>
+            <button className="btn" onClick={this.feedPet}>Eat</button>
             }
             
             {this.state.awake === true ?
@@ -221,22 +227,28 @@ class NestItem extends Component {
             <button className="btn" onClick={this.goToSleep}>Awaken</button>
             }
           </div>
-              {this.props.store.pet.health === 100 ?
-              <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
-              :
-              <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
-              }
-          {this.props.store.pet.energy === 100 ?
-          <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
-          :
-          <p>ENERGY: {this.props.store.pet.energy}/100</p>
-          }
+          <div className="meterName">
+            {this.props.store.pet.health === 100 ?
+            <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
+            :
+            <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
+            }
+          </div>
+          <Meter />
+          <div className="meterName">
+            {this.props.store.pet.energy === 100 ?
+            <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
+            :
+            <p>ENERGY: {this.props.store.pet.energy}/100</p>
+            } 
+          </div>
+          <Meter />
         </div>
-        {this.state.awake === true ?
-        <button className="btn" onClick={this.walkPet}>Walk</button>
-        :
-        <button className="btn" onClick={this.fakeFunction}>Walk</button>
-        }
+        <div>
+          <p>
+            <br/>
+          </p>
+        </div>
       </div> 
     );
   }

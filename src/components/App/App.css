@@ -6,6 +6,30 @@ body,
   font-family: 'Lato', sans-serif;
 }
 
+.meter {
+  display: inline-grid;
+  grid-template-areas:
+    'header header header header header header';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  max-width: 300px;
+}
+
+.emptyBar {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+}
+
+.fullBar {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+}
+
 .walking {
   height: 600px;
   width: 800px;
@@ -55,6 +79,14 @@ body,
 
 .petInfo2 {
   border: 4px darkmagenta double;
+  background-color: lavender;
+  border-radius: 50%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.petInfo3 {
+  border: 42px darkmagenta double;
   background-color: lavender;
   border-radius: 50%;
   margin-left: 15%;
