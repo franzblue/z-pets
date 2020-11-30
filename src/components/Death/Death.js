@@ -48,7 +48,7 @@ class Death extends Component {
   render() {
     return (
       <div className="petInfo">
-        <h2 className="meterName">Graveyard</h2>  
+        <h2 className="meterNames">Graveyard</h2>  
         <div className="petAnimation">
             <img src="images/graveyard.jpg" alt="graveyard"/>
         </div>

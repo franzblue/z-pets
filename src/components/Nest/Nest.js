@@ -31,7 +31,7 @@ class NestItem extends Component {
       }
 
       petDeath= () => {
-        if(this.props.store.pet.happy < 10 || this.props.store.pet.age > 999) {
+        if(this.props.store.pet.happy < 10 || this.props.store.pet.age > 525) {
           this.props.history.push('/graveyard');
         }
       }
@@ -192,10 +192,10 @@ class NestItem extends Component {
   render() {
     return (
       <div className="petInfo">
-        <div className="meterName">
+        <div className="meterNames">
         <p>{this.props.store.pet.name}</p>
-        <p>Current Time: <br/>
-        {this.state.curTime}</p>
+        {/* <p>Current Time: <br/>
+        {this.state.curTime}</p> */}
         </div>
         
         {/* {JSON.stringify(this.state.awake)}
@@ -207,7 +207,7 @@ class NestItem extends Component {
               {this.state.awake === true ?
               <img src={this.props.store.image.name} alt={this.props.store.image.alt}/>
               :
-              <img id="night" src="images/night.jpg" alt="starry night"/>
+              <img id="night" src="images/knight.jpg" alt="starry night"/>
               }
             </div>
           </div>
@@ -219,7 +219,7 @@ class NestItem extends Component {
               :
               <button className="btn" onClick={this.fakeFunction}>Walk</button>
               }
-            {this.props.store.pet.crickets_eaten % 10 === 0 ?
+            {this.props.store.pet.crickets_eaten % 10 === 0 || this.props.store.pet.crickets_eaten % 5 === 0 ?
             <button className="btn" onClick={this.cleanPoo}>Clean Poo</button>
             :
             <button className="btn" onClick={this.feedPet}>Eat</button>
@@ -232,21 +232,14 @@ class NestItem extends Component {
             }
           </div>
           <div className="meterName">
-            {this.props.store.pet.health === 100 ?
-            <p>{this.props.store.pet.name} is stuffed!</p>
-            :
-            <p>{this.props.store.pet.name} is kinda hungry...</p>
-            }
-          </div>
-          <HealthMeter />
-          <div className="meterName">
-            {this.props.store.pet.energy === 100 ?
-            <p>{this.props.store.pet.name} is full of energy! Let's go for a walk!</p>
-            :
-            <p>ENERGY:</p>
-            } 
-          </div>
-          <EnergyMeter />
+                <p>HUNGER: </p>
+                <HealthMeter />
+                <br/> 
+                <p>ENERGY: </p>
+                <EnergyMeter />
+                <br/> 
+              </div>
+          
         </div>
         <div>
           <p>

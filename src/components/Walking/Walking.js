@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import swal from 'sweetalert';
 import HealthMeter from '../HealthMeter/HealthMeter';
-import EnergMeter from '../EnergyMeter/EnergyMeter';
+import EnergyMeter from '../EnergyMeter/EnergyMeter';
 import './Walking.css';
 
 class Walking extends Component {
@@ -82,7 +82,7 @@ class Walking extends Component {
       <div className="petInfo">
         {/* {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)} */}
-          <h2 className="meterName">{this.state.heading}</h2>
+          <h2 className="meterNames">{this.state.heading}</h2>
           <div className="petAnimation">
             { this.petAnimation() }
             <img className="walking" src="images/walking.jpg" alt="cityscape"/>
@@ -93,10 +93,12 @@ class Walking extends Component {
               <div className="meterName">
                 <p>HUNGER: </p>
                 <HealthMeter />
+                <br/> 
                 <p>ENERGY: </p>
-                <EnergMeter />
+                <EnergyMeter />
                 <br/> 
               </div>
+              <br/>
               <button className="btn" onClick={this.lookAround}>Look Around</button>
               <button className="btn" onClick={this.goHome}>Go Back Home</button>
             <br/><br/>

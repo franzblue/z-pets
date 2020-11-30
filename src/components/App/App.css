@@ -9,6 +9,18 @@ body,
 .meterName {
   font-family: 'Permanent Marker', cursive;
   font-size: 22px;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background-color: skyblue;
+  background-blend-mode: hard-light;
+  box-shadow: -5px -10px 8px black;
+  /* opacity: .66; */
+}
+
+.meterNames {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
 }
 
 .meter {
