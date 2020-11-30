@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import swal from 'sweetalert';
 import './Walking.css';
 
 class Walking extends Component {
@@ -53,7 +54,7 @@ class Walking extends Component {
     }
 
     lookAround = () => {
-      console.log('clicked look around');
+      swal('This looks like a nice place to hang out.')
       this.props.dispatch( {type:'GET_IMAGE'} );
       this.props.history.push('/nest');
     }
