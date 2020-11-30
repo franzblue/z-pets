@@ -6,6 +6,7 @@ import './Walking.css';
 class Walking extends Component {
   state = {
     heading: 'Walking',
+    energyId: null
   };
 
   componentDidMount = () => {
@@ -14,9 +15,16 @@ class Walking extends Component {
     this.walkPet();
   }
 
+  componentWillUnmount = () => {
+    clearInterval(this.state.energyId);
+  }
+
   walkPet = () => {
-    setInterval(() => {
-        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 6000); 
+    let energyInterval = setInterval(() => {
+        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 6000);
+        this.setState( {
+          energyId: energyInterval
+        })
     }
 
   agePet = () => {

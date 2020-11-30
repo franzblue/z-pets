@@ -8,6 +8,8 @@ class NestItem extends Component {
   state = {
     awake: true,
     curTime: null,
+    ageIntervalId: null,
+    energyId: null
   }
 
     componentDidMount = () => {
@@ -19,6 +21,11 @@ class NestItem extends Component {
         this.tirePet();
         this.clock();
         this.petDeath();
+      }
+
+      componentWillUnmount = () => {
+        clearInterval(this.state.ageIntervalId);
+        clearInterval(this.state.energyId);
       }
 
       petDeath= () => {
@@ -36,16 +43,23 @@ class NestItem extends Component {
       }
 
       tirePet = () => {
-        setInterval(() => {
+        let energyInterval = setInterval(() => {
           if(this.state.awake === true) {
             this.props.dispatch( {type:'WALK', payload: this.props.store.pet.id})}
           }, 13000);
+          this.setState( {
+            energyId: energyInterval
+          })
         }
 
       agePet = () => {
-        setInterval(() => {
+        let ageInterval = setInterval(() => {
           this.props.dispatch( {type:'AGE_PET', payload: this.props.store.pet.id})}, 1000);
+          this.setState( {
+            ageIntervalId: ageInterval
+          })
       }
+
    
       hungeryFunction = () => {
         setInterval(() => {
@@ -179,8 +193,8 @@ class NestItem extends Component {
         <p>Z-Pet: {this.props.store.pet.name}</p>
         <p>Owner: {this.props.store.user.username}</p>
         <p>Current Time: {this.state.curTime}</p>
-        {/* {JSON.stringify(this.state.awake)}
-          {JSON.stringify(this.props.store.pet)} */}
+        {JSON.stringify(this.state.awake)}
+          {JSON.stringify(this.props.store.pet)}
           <div className="container-fluid">
             <div className="petAnimation">
               { this.petAnimation() }
