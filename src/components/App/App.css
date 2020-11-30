@@ -253,11 +253,11 @@ font-weight: normal;
 }
 
 table tr:nth-child(even) {
-background-color: #efefef;
+background-color: #efefef;;
 }
 
 table tr:nth-child(odd) {
-background-color: transparent;
+background-color: #ffffff;
 }
 
 .foot {

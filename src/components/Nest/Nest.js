@@ -235,7 +235,7 @@ class NestItem extends Component {
             {this.props.store.pet.health === 100 ?
             <p>{this.props.store.pet.name} is stuffed!</p>
             :
-            <p>{this.props.store.pet.name} is kinda hungery...</p>
+            <p>{this.props.store.pet.name} is kinda hungry...</p>
             }
           </div>
           <HealthMeter />
