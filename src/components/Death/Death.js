@@ -41,7 +41,7 @@ class Death extends Component {
   startOver = () => {
       console.log('clicked start over');
       this.props.dispatch( {type:'START_OVER', payload: this.props.store.pet.id});
-      swal(`Circle of life is complete, ${this.props.store.pet.name} has passed on...`);
+      swal(`The Circle of Life is complete, ${this.props.store.pet.name} has passed on...`);
       this.props.history.push('/user');
   }
 
