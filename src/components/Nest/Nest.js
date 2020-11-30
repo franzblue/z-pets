@@ -29,7 +29,7 @@ class NestItem extends Component {
       }
 
       petDeath= () => {
-        if(this.props.store.pet.happy < 10) {
+        if(this.props.store.pet.happy < 10 || this.props.store.pet.age > 999) {
           this.props.history.push('/graveyard');
         }
       }

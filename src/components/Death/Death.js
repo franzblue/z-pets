@@ -17,7 +17,13 @@ class Death extends Component {
 
   deathAnimation = () => {
       console.log('clicked');
-      if(this.props.store.pet.temperament === "Happy") {
+      if(this.props.store.pet.age > 499) {
+        return <div className="oldDeath"></div>;
+      }
+      else if(this.props.store.pet.age < 100) {
+        return <div className="babyDeath"></div>;
+      }
+      else if(this.props.store.pet.temperament === "Happy") {
         return <div className="happyDeath"></div>;
     } else if(this.props.store.pet.temperament === "Sad") {
         return <div className="sadDeath"></div>;
