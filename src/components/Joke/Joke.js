@@ -118,165 +118,129 @@ class Joke extends Component {
 </div>
 
 <div className="meter">
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
 </div>
 
 <div className="meter">
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
 </div>
 
 <div className="meter">
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
 </div>
 
 <div className="meter">
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
 </div>
 
 <div className="meter">
-<div className="fullBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
+  <div className="fullBar">
+    <p></p>
+  </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
 </div>
 
 <div className="meter">
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
-<div className="emptyBar">
-  <p></p>
-</div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
+    <div className="emptyBar">
+      <p></p>
+    </div>
 </div>
 {/* 0/8 */}
       </div>

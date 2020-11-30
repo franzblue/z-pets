@@ -2,22 +2,27 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import swal from 'sweetalert';
+import HealthMeter from '../HealthMeter/HealthMeter';
+import EnergMeter from '../EnergyMeter/EnergyMeter';
 import './Walking.css';
 
 class Walking extends Component {
   state = {
     heading: 'Walking Around Town',
-    energyId: null
+    energyId: null,
+    hungerId: null
   };
 
   componentDidMount = () => {
     this.getPet();
     this.agePet();
     this.walkPet();
+    this.hungeryFunction();
   }
 
   componentWillUnmount = () => {
     clearInterval(this.state.energyId);
+    clearInterval(this.state.hungerId);
   }
 
   walkPet = () => {
@@ -36,6 +41,15 @@ class Walking extends Component {
   getPet = () => {
     console.log('get pet');
     this.props.dispatch( {type:'GET_PET'} );
+  }
+
+  hungeryFunction = () => {
+    let hungerInterval = setInterval(() => {
+      this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})
+    }, 6000);
+    this.setState( {
+      hungerId: hungerInterval
+    })
   }
 
   petAnimation = () => {
@@ -74,11 +88,14 @@ class Walking extends Component {
               <img className="walking" src="images/walking.jpg" alt="cityscape"/>
           </div>
           <div>
-            <br/>
-              <p>Z-Pet: {this.props.store.pet.name}</p>
-              <p>Owner: {this.props.store.user.username}</p>
+
+              {/* <p>Z-Pet: {this.props.store.pet.name}</p>
+              <p>Owner: {this.props.store.user.username}</p> */}
               <p>HUNGER: {this.props.store.pet.health}/100</p>
+              <HealthMeter />
               <p>ENERGY: {this.props.store.pet.energy}/100</p>
+              <EnergMeter />
+              <br/>
               <button className="btn" onClick={this.lookAround}>Look Around</button>
               <button className="btn" onClick={this.goHome}>Go Back Home</button>
             <br/><br/>

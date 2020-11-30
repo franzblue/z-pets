@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import Meter from '../Meter/Meter';
+import HealthMeter from '../HealthMeter/HealthMeter';
+import EnergyMeter from '../EnergyMeter/EnergyMeter';
 import swal from 'sweetalert';
 
 
@@ -234,7 +235,7 @@ class NestItem extends Component {
             <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
             }
           </div>
-          <Meter />
+          <HealthMeter />
           <div className="meterName">
             {this.props.store.pet.energy === 100 ?
             <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
@@ -242,7 +243,7 @@ class NestItem extends Component {
             <p>ENERGY: {this.props.store.pet.energy}/100</p>
             } 
           </div>
-          <Meter />
+          <EnergyMeter />
         </div>
         <div>
           <p>
