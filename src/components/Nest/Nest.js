@@ -47,7 +47,6 @@ class NestItem extends Component {
           this.props.dispatch( {type:'AGE_PET', payload: this.props.store.pet.id})}, 1000);
       }
    
-
       hungeryFunction = () => {
         setInterval(() => {
           if(this.state.awake === true) {
@@ -127,11 +126,15 @@ class NestItem extends Component {
       
       petAnimation = () => {
         if(this.state.awake === true) {
-          if(this.props.store.pet.age > 500) {
+          if(this.props.store.pet.age === 500) {
+            swal('Hey your pet is getting really old.')
             return <div className="old"></div>;
           }
-          else if(this.props.store.pet.age > 100) {
-            if(this.props.store.pet.temperament === "Happy") {
+            else if(this.props.store.pet.age > 500) {
+              return <div className="old"></div>;
+          }
+            else if(this.props.store.pet.age > 100) {
+              if(this.props.store.pet.temperament === "Happy") {
 
                   return <div className="happy"></div>;
               } else if(this.props.store.pet.temperament === "Sad") {
@@ -176,8 +179,8 @@ class NestItem extends Component {
         <p>Z-Pet: {this.props.store.pet.name}</p>
         <p>Owner: {this.props.store.user.username}</p>
         <p>Current Time: {this.state.curTime}</p>
-        {JSON.stringify(this.state.awake)}
-          {JSON.stringify(this.props.store.pet)}
+        {/* {JSON.stringify(this.state.awake)}
+          {JSON.stringify(this.props.store.pet)} */}
           <div className="container-fluid">
             <div className="petAnimation">
               { this.petAnimation() }

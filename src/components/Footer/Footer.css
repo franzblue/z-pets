@@ -11,7 +11,7 @@ footer {
   -webkit-animation: old 4s infinite;
   -moz-animation: old 4s infinite;
   -o-animation: old 4s infinite;
-  top: 20em; right: 12em; left: 20em; bottom: 5em;
+  top: 18em; right: 12em; left: 20em; bottom: 5em;
 }
 
 @keyframes old {
