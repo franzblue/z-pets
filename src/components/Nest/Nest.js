@@ -46,7 +46,7 @@ class NestItem extends Component {
         let energyInterval = setInterval(() => {
           if(this.state.awake === true) {
             this.props.dispatch( {type:'WALK', payload: this.props.store.pet.id})}
-          }, 13000);
+          }, 10000);
           this.setState( {
             energyId: energyInterval
           })

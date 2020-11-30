@@ -3,6 +3,7 @@ body,
 #react-root {
   height: 100%;
   background-color: skyblue;
+  font-family: 'Lato', sans-serif;
 }
 
 .walking {
@@ -60,6 +61,10 @@ body,
   margin-right: 15%;
 }
 
+.temper {
+  font-family: 'Lobster', cursive;
+}
+
 #night {
   width: auto; 
   height: auto;
@@ -106,10 +111,11 @@ Button
   border-width: 1px 1px 3px;
   border-radius: 4px;
   background-color: teal;
-  color: #f8f8f8;
+  color: black;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .btn_sizeMin {
@@ -174,9 +180,11 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: purple;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  border: 42px darkmagenta double;
+  border-radius: 50%;
 }
 
 input {

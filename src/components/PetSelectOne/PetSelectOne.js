@@ -49,7 +49,7 @@ class PetOne extends Component {
             <img src={this.props.store.image.name} alt={this.props.store.image.alt}/>
           </div>
           <div className="petInfo2">
-            <h2>{this.state.temperament}</h2>
+            <h2 className="temper">{this.state.temperament}</h2>
             <p>Happy Z-Pets love to play and frolic outdoors.</p>
             <p>They also tell the best jokes!</p>
           </div>

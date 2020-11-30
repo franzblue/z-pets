@@ -36,6 +36,7 @@ function* adminDeleteUser(action) {
     try {
         yield axios.delete(`/api/admin/user/${action.payload}`);
         yield put ( {type: 'GET_ADMIN_USER'} );
+        yield put ( {type: 'GET_ADMIN_PET'} );
     } catch (error) {
         console.log('error', error);
     }
