@@ -6,6 +6,12 @@ body,
   font-family: 'Lato', sans-serif;
 }
 
+.meterName {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 22px;
+  opacity: .66;
+}
+
 .meter {
   display: inline-grid;
   grid-template-areas:

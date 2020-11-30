@@ -21,7 +21,7 @@ CREATE TABLE "z-pet" (
 "health" INTEGER CHECK (health > -1 AND health <101) DEFAULT 100, 
 "happy" INTEGER CHECK (happy > -1 AND happy <101) DEFAULT 100,
 "energy" INTEGER CHECK (energy > -1 AND energy <101) DEFAULT 100, 
-"crickets_eaten" INTEGER DEFAULT 0,
+"crickets_eaten" INTEGER DEFAULT 1,
 "user_id" INTEGER REFERENCES "user" ON DELETE CASCADE
 );
 

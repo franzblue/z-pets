@@ -192,9 +192,12 @@ class NestItem extends Component {
   render() {
     return (
       <div className="petInfo">
-        <p>Z-Pet: {this.props.store.pet.name}</p>
-        <p>Owner: {this.props.store.user.username}</p>
-        <p>Current Time: {this.state.curTime}</p>
+        <div className="meterName">
+        <p>{this.props.store.pet.name}</p>
+        <p>Current Time: <br/>
+        {this.state.curTime}</p>
+        </div>
+        
         {/* {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)} */}
           <div className="container-fluid">
@@ -230,17 +233,17 @@ class NestItem extends Component {
           </div>
           <div className="meterName">
             {this.props.store.pet.health === 100 ?
-            <p>{this.props.store.pet.name} is stuffed! {this.props.store.pet.health}/100</p>
+            <p>{this.props.store.pet.name} is stuffed!</p>
             :
-            <p>{this.props.store.pet.name} is kinda hungery... {this.props.store.pet.health}/100</p>
+            <p>{this.props.store.pet.name} is kinda hungery...</p>
             }
           </div>
           <HealthMeter />
           <div className="meterName">
             {this.props.store.pet.energy === 100 ?
-            <p>{this.props.store.pet.name} is full of energy! Let's go for a walk! {this.props.store.pet.energy}/100</p>
+            <p>{this.props.store.pet.name} is full of energy! Let's go for a walk!</p>
             :
-            <p>ENERGY: {this.props.store.pet.energy}/100</p>
+            <p>ENERGY:</p>
             } 
           </div>
           <EnergyMeter />
