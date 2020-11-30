@@ -91,9 +91,9 @@ class Walking extends Component {
               {/* <p>Z-Pet: {this.props.store.pet.name}</p>
               <p>Owner: {this.props.store.user.username}</p> */}
               <div className="meterName">
-                <p>HUNGER: {this.props.store.pet.health}/100</p>
+                <p>HUNGER: </p>
                 <HealthMeter />
-                <p>ENERGY: {this.props.store.pet.energy}/100</p>
+                <p>ENERGY: </p>
                 <EnergMeter />
                 <br/> 
               </div>
