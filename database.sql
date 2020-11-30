@@ -37,3 +37,5 @@ INSERT INTO "image" ("name", "alt") VALUES ('images/greenpark.jpg', 'park');
 INSERT INTO "image" ("name", "alt") VALUES ('images/oceanrock.jpg', 'ocean');
 INSERT INTO "image" ("name", "alt") VALUES ('images/petals.jpg', 'petals');
 INSERT INTO "image" ("name", "alt") VALUES ('images/plains.jpg', 'plains');
+INSERT INTO "image" ("name", "alt") VALUES ('images/purplemountains.jpg', 'mountains');
+INSERT INTO "image" ("name", "alt") VALUES ('images/bench.jpg', 'bench');
