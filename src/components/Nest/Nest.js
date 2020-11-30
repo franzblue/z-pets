@@ -127,7 +127,10 @@ class NestItem extends Component {
       
       petAnimation = () => {
         if(this.state.awake === true) {
-          if(this.props.store.pet.age > 100) {
+          if(this.props.store.pet.age > 500) {
+            return <div className="old"></div>;
+          }
+          else if(this.props.store.pet.age > 100) {
             if(this.props.store.pet.temperament === "Happy") {
 
                   return <div className="happy"></div>;

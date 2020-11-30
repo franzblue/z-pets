@@ -30,7 +30,10 @@ class Walking extends Component {
   }
 
   petAnimation = () => {
-    if(this.props.store.pet.temperament === "Happy") {
+    if(this.props.store.pet.age > 500) {
+      return <div className="oldWalk"></div>;
+    }
+      else if(this.props.store.pet.temperament === "Happy") {
         return <div className="happyWalk"></div>;
     } else if(this.props.store.pet.temperament === "Sad") {
         return <div className="sadWalk"></div>;
