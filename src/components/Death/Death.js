@@ -48,16 +48,16 @@ class Death extends Component {
   render() {
     return (
       <div className="petInfo">
-        <h2>Graveyard</h2>  
+        <h2 className="meterName">Graveyard</h2>  
         <div className="petAnimation">
             <img src="images/graveyard.jpg" alt="graveyard"/>
-        </div> 
-        <p className="death">Boo!</p>
+        </div>
+        <br/>
         <button className="btn" onClick={this.startOver}>Your Z-Pet is Dead</button>
+        <br/>
         { this.deathAnimation() }
       <div>   
-      </div>
-      <p id="box">Oh no! It looks like your Z-Pet is dying :'(</p>  
+      </div> 
       </div>
     );
   }

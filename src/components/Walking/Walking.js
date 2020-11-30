@@ -82,20 +82,21 @@ class Walking extends Component {
       <div className="petInfo">
         {/* {JSON.stringify(this.state.awake)}
           {JSON.stringify(this.props.store.pet)} */}
-          <h2>{this.state.heading}</h2>
+          <h2 className="meterName">{this.state.heading}</h2>
           <div className="petAnimation">
-              { this.petAnimation() }
-              <img className="walking" src="images/walking.jpg" alt="cityscape"/>
+            { this.petAnimation() }
+            <img className="walking" src="images/walking.jpg" alt="cityscape"/>
           </div>
           <div>
-
               {/* <p>Z-Pet: {this.props.store.pet.name}</p>
               <p>Owner: {this.props.store.user.username}</p> */}
-              <p>HUNGER: {this.props.store.pet.health}/100</p>
-              <HealthMeter />
-              <p>ENERGY: {this.props.store.pet.energy}/100</p>
-              <EnergMeter />
-              <br/>
+              <div className="meterName">
+                <p>HUNGER: {this.props.store.pet.health}/100</p>
+                <HealthMeter />
+                <p>ENERGY: {this.props.store.pet.energy}/100</p>
+                <EnergMeter />
+                <br/> 
+              </div>
               <button className="btn" onClick={this.lookAround}>Look Around</button>
               <button className="btn" onClick={this.goHome}>Go Back Home</button>
             <br/><br/>
