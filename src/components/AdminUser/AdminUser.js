@@ -38,7 +38,7 @@ class Test extends Component {
 
     makeAdmin = () => {
       console.log('clicked makeAdmin');
-      if(this.props.store.user.admin === true) {
+      if(this.props.store.user.id === 1) {
         swal({
           title: `Make ${this.props.item.username} an admin?`,
           text: `Once approved, ${this.props.item.username} will have full admin authority.`,
