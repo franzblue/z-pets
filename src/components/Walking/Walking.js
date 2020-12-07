@@ -27,7 +27,7 @@ class Walking extends Component {
 
   walkPet = () => {
     let energyInterval = setInterval(() => {
-        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 5000);
+        this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id})}, 4000);
         this.setState( {
           energyId: energyInterval
         })
@@ -46,7 +46,7 @@ class Walking extends Component {
   hungeryFunction = () => {
     let hungerInterval = setInterval(() => {
       this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})
-    }, 6000);
+    }, 4000);
     this.setState( {
       hungerId: hungerInterval
     })

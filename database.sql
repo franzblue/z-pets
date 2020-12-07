@@ -31,7 +31,6 @@ CREATE TABLE "image" (
 "alt" VARCHAR(255)
 );
 
-INSERT INTO "image" ("name", "alt") VALUES ('images/boat.jpg', 'boat');
 INSERT INTO "image" ("name", "alt") VALUES ('images/fall.jpg', 'fall');
 INSERT INTO "image" ("name", "alt") VALUES ('images/greenpark.jpg', 'park');
 INSERT INTO "image" ("name", "alt") VALUES ('images/oceanrock.jpg', 'ocean');

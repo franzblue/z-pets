@@ -31,7 +31,7 @@ class NestItem extends Component {
       }
 
       petDeath= () => {
-        if(this.props.store.pet.happy < 10 || this.props.store.pet.age > 525) {
+        if(this.props.store.pet.happy < 10 || this.props.store.pet.age > 555) {
           this.props.history.push('/graveyard');
         }
       }
@@ -48,7 +48,7 @@ class NestItem extends Component {
         let energyInterval = setInterval(() => {
           if(this.state.awake === true) {
             this.props.dispatch( {type:'WALK', payload: this.props.store.pet.id})}
-          }, 10000);
+          }, 8000);
           this.setState( {
             energyId: energyInterval
           })
@@ -67,7 +67,7 @@ class NestItem extends Component {
         setInterval(() => {
           if(this.state.awake === true) {
           this.props.dispatch( {type:'LOWER_FOOD', payload: this.props.store.pet.id})}
-        }, 6000);
+        }, 5000);
       }
 
       checkHealth = () => {
@@ -91,6 +91,7 @@ class NestItem extends Component {
       }
 
       feedPet = () => {
+        this.petDeath();
         this.poopFunction();
         if(this.state.awake === true) {
           if(this.props.store.pet.health !== 100) {
@@ -179,7 +180,12 @@ class NestItem extends Component {
     }
 
     walkPet = () => {
-      if(this.props.store.pet.energy !== 0) {
+      if(this.props.store.pet.age < 100) {
+        swal(`Looks like ${this.props.store.pet.name} is too young to go for a walk!`, {
+          button: "Ok!",
+      });
+      }
+      else if(this.props.store.pet.energy !== 0) {
         this.props.dispatch( {type: 'WALK', payload: this.props.store.pet.id} );
         this.props.history.push('/walking');  
       } else {
@@ -219,7 +225,7 @@ class NestItem extends Component {
               :
               <button className="btn" onClick={this.fakeFunction}>Walk</button>
               }
-            {this.props.store.pet.crickets_eaten % 10 === 0 || this.props.store.pet.crickets_eaten % 5 === 0 ?
+            {this.props.store.pet.crickets_eaten % 10 === 0 || this.props.store.pet.crickets_eaten % 5 === 0  && this.props.store.pet.age < 100 ?
             <button className="btn" onClick={this.cleanPoo}>Clean Poo</button>
             :
             <button className="btn" onClick={this.feedPet}>Eat</button>
