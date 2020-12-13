@@ -29,6 +29,54 @@ const {
       });
   });
 
+  router.get('/user/sort_id', rejectUnauthenticated, (req, res) => {
+    // GET route code here
+    // Data to populate admin table, omits password
+    const queryText = `SELECT "id", "username", "admin", "last_logged" FROM "user" ORDER BY "id";`
+    pool.query(queryText)
+      .then((results) => res.send(results.rows))
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+      });
+  });
+
+  router.get('/user/sort_username', rejectUnauthenticated, (req, res) => {
+    // GET route code here
+    // Data to populate admin table, omits password
+    const queryText = `SELECT "id", "username", "admin", "last_logged" FROM "user" ORDER BY "username";`
+    pool.query(queryText)
+      .then((results) => res.send(results.rows))
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+      });
+  });
+
+  router.get('/user/sort_last_log', rejectUnauthenticated, (req, res) => {
+    // GET route code here
+    // Data to populate admin table, omits password
+    const queryText = `SELECT "id", "username", "admin", "last_logged" FROM "user" ORDER BY "last_logged";`
+    pool.query(queryText)
+      .then((results) => res.send(results.rows))
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+      });
+  });
+
+  router.get('/user/sort_admin', rejectUnauthenticated, (req, res) => {
+    // GET route code here
+    // Data to populate admin table, omits password
+    const queryText = `SELECT "id", "username", "admin", "last_logged" FROM "user" ORDER BY "admin";`
+    pool.query(queryText)
+      .then((results) => res.send(results.rows))
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+      });
+  });
+
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     // route to delete unruly z-pets
     let petId = req.params.id;

@@ -61,6 +61,50 @@ function* makeAdmin(action) {
     }
 }
 
+function* sortUserId() {
+    console.log('in sort user ID');
+    try {
+        const response = yield axios.get('/api/admin/user/sort_id');
+        console.log(response.data);
+        yield put ( {type:'SET_ADMIN_USER', payload: response.data} );
+      } catch (error) {
+        console.log(error);
+      }
+}
+
+function* sortUsername() {
+    console.log('in sort username');
+    try {
+        const response = yield axios.get('/api/admin/user/sort_username');
+        console.log(response.data);
+        yield put ( {type:'SET_ADMIN_USER', payload: response.data} );
+      } catch (error) {
+        console.log(error);
+      }
+}
+
+function* sortUserLastLog() {
+    console.log('in sort last log');
+    try {
+        const response = yield axios.get('/api/admin/user/sort_last_log');
+        console.log(response.data);
+        yield put ( {type:'SET_ADMIN_USER', payload: response.data} );
+      } catch (error) {
+        console.log(error);
+      }
+}
+
+function* sortUserAdmin() {
+    console.log('in sort last log');
+    try {
+        const response = yield axios.get('/api/admin/user/sort_admin');
+        console.log(response.data);
+        yield put ( {type:'SET_ADMIN_USER', payload: response.data} );
+      } catch (error) {
+        console.log(error);
+      }
+}
+
 function* adminSaga() {
     yield takeLatest('GET_ADMIN_PET', adminGetPet);
     yield takeLatest('DELETE_PET', adminDelete);
@@ -68,6 +112,10 @@ function* adminSaga() {
     yield takeLatest('DELETE_USER', adminDeleteUser);
     yield takeLatest('LAST_LOGGED', updateLastLogged);
     yield takeLatest('MAKE_ADMIN', makeAdmin);
+    yield takeLatest('SORT_USER_ID', sortUserId);
+    yield takeLatest('SORT_USER_USER', sortUsername);
+    yield takeLatest('SORT_USER_LOG',sortUserLastLog);
+    yield takeLatest('SORT_USER_ADMIN', sortUserAdmin);
   }
   
   export default adminSaga;
