@@ -1,0 +1,7 @@
+div.login {
+    display:grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap:5px;
+}
+div.login label       { text-align:right; margin-top: 5px;}
+div.login label:after { content: ":"; }

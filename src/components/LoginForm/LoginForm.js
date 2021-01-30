@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+import './LoginForm.css';
+
 class LoginForm extends Component {
   state = {
     username: '',
@@ -39,9 +41,10 @@ class LoginForm extends Component {
             {this.props.store.errors.loginMessage}
           </h3>
         )}
-        <div>
+        <div className="login">
           <label htmlFor="username">
-            Username:
+            Username
+          </label>
             <input
               type="text"
               name="username"
@@ -49,11 +52,9 @@ class LoginForm extends Component {
               value={this.state.username}
               onChange={this.handleInputChangeFor('username')}
             />
-          </label>
-        </div>
-        <div>
           <label htmlFor="password">
-            Password:
+            Password
+          </label>
             <input
               type="password"
               name="password"
@@ -61,7 +62,6 @@ class LoginForm extends Component {
               value={this.state.password}
               onChange={this.handleInputChangeFor('password')}
             />
-          </label>
         </div>
         <div>
           <input className="btn" type="submit" name="submit" value="Log In" />
