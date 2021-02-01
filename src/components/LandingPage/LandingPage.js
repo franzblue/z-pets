@@ -20,11 +20,6 @@ class LandingPage extends Component {
     return (
       <div className="container">
         {/* <h2>{this.state.heading}</h2> */}
-
-        <div className="grid">
-          <div className="grid-col grid-col_4">
-          </div>
-          <div className="grid-col grid-col_4">
             <RegisterForm />
 
             <center>
@@ -33,8 +28,6 @@ class LandingPage extends Component {
                 Login
               </button>
             </center>
-          </div>
-        </div>
       </div>
     );
   }
